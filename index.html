@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>WebFinal</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
-    <script src="account.js"></script>  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</head>
-<body>
-    <div id="logindiv">
-        <div class="group">
-            <svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
-            <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <input class="input" type="password" placeholder="password">
+    <head>
+        <meta charset="UTF-8">
+        <title>WebFinal</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="index.js"></script>
+        <script src="account.js"></script>  
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/south-street/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+    <body>
+        <div id="top"></div>
+        
+        <div id="top-btn">
+            <button id="call-login">
+                <img src="Media/login-icon.png" alt="login-icon" id="login-icon" onclick="callLogin()">
+            </button>
+            <button id="register">
+                <img src="Media/add-user.png" alt="register-icon" id="register-icon" onclick="register()">
+            </button>
         </div>
 
-        <p class="input-container">
-            <input type="text" placeholder="Enter your name" name="text" id="text" class="input-field" autocomplete="name">
-            <label class="input-label" for="text">Name</label>
-        </p>
-    
-
-        <div id="log_in">
-            Account: <input type="text"></input><br><br>
-            Password: <input type="text"></input>    
+        <div id="login-dialog">
+            <form>
+                <input type="text" id="username" placeholder="Account" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <input type="button" value="Login" id="login-btn" onclick="validate()">
+                <input type="button" value="Cancel" id="cancel-btn" onclick="cancel()">
+            </form>
         </div>
-    </div>
-</body>
+        
+    </body>
 </html>

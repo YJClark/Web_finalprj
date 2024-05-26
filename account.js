@@ -1,17 +1,5 @@
-const accounts = [
-  { username: 'customer1', password: 'password1' },
-  { username: 'customer2', password: 'password2' },
-  { username: 'customer3', password: 'password3' },
-  // Add more accounts here
-];
-
-const accountData = accounts.map(account => `${account.username}:${account.password}`).join('\n');
-
-const fs = require('fs');
-fs.writeFile('accounts.txt', accountData, (err) => {
-  if (err) throw err;
-  console.log('Accounts file created successfully!');
-});
-
+var account = ['','','','','',''];
+var password = ['10Clark13', '02Peko08', '12Sana29', '01Winetr01', '05IU16', '01Sullyoon26'];
+var accepted = [0, 1, 1, 1, 1, 1];  //表管理員認可的，若非認證則為一般會員，防呆用
 
 
