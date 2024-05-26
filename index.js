@@ -1,8 +1,3 @@
-function callLogin(){
-    document.getElementById("login-form").style.display = "block";
-
-}
-
 function register(){
 
 
@@ -10,8 +5,10 @@ function register(){
 }
 
 function validate(){
-//轉乘ascii做mod，再轉成
-
+    var username = $('#username').val();
+    var password = $('#password').val();
+//對username用ascii做mod 52，再回傳字母
+alert('Please fill in the username and password');
 
 }
 
@@ -33,32 +30,28 @@ function login(checked){
         default:
 
     } 
-
-
-
 }
 
-$('#login-dialog').dialog({
+$('#login-form').dialog({
     autoOpen: false,
-    modal: true,
+    modal: false,
     draggable: false,
-    width: 200,
-    height: 200,
+    width: 275, 
+    height: 250,
+    show: {
+        effect: "fade",
+        duration: 500
+    },
+    hide: {
+        effect: "fade",
+        duration: 500
+    },
+
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+$("#call-login").click(function() {
+    $("#login-form").dialog("open");
+});
 
 
 /*
@@ -100,7 +93,6 @@ document.getElementById("call-login").addEventListener("click", function(){
                 alert('Login failed');
             }
         }
-
 
 */
 

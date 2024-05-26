@@ -4,12 +4,9 @@
         <meta charset="UTF-8">
         <title>WebFinal</title>
         <link rel="stylesheet" href="index.css">
-        <script src="index.js"></script>
-        <script src="account.js"></script>  
-
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/south-street/jquery-ui.css">
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/south-street/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     </head>
     <body>
         <div id="top"></div>
@@ -23,14 +20,17 @@
             </button>
         </div>
 
-        <div id="login-dialog">
+        <div id="login-form" title="Hi, mate!">
             <form>
-                <input type="text" id="username" placeholder="Account" required><br>
-                <input type="password" id="password" placeholder="Password" required><br>
+                <input type="text" id="username" placeholder="Account" required><br><br>
+                <input type="password" id="password" placeholder="Password" required><br><br>
                 <input type="button" value="Login" id="login-btn" onclick="validate()">
                 <input type="button" value="Cancel" id="cancel-btn" onclick="cancel()">
             </form>
         </div>
         
+
+        <script src="index.js"></script>
+        <script src="account.js"></script>  
     </body>
 </html>
