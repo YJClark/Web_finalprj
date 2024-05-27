@@ -9,27 +9,33 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     </head>
     <body>
-        <div id="top"></div>
-        
-        <div id="top-btn">
-            <button id="call-login">
-                <img src="Media/login-icon.png" alt="login-icon" id="login-icon" onclick="callLogin()">
-            </button>
-            <button id="register">
-                <img src="Media/add-user.png" alt="register-icon" id="register-icon" onclick="register()">
-            </button>
-        </div>
+        <div id="banner">
+            <div id="top"></div>
+            <hr id="top-hr">
 
+            <div id="logo">
+                <h2>FarmTheMall</h2>
+            </div>
+
+            <div id="top-btn">
+                <button id="call-login">
+                    <img src="Media/login-icon.png" alt="login-icon" id="login-icon" onclick="callLogin()">
+                </button>
+                <button id="register">
+                    <img src="Media/add-user.png" alt="register-icon" id="register-icon" onclick="register()">
+                </button>
+            </div>
+        </div>
+        
         <div id="login-form" title="Hi, mate!">
             <form>
                 <input type="text" id="username" placeholder="Account" required><br><br>
                 <input type="password" id="password" placeholder="Password" required><br><br>
-                <input type="button" value="Login" id="login-btn" onclick="validate()">
+                <input type="button" value="Login" id="login-btn" onclick="validate(document.getElementById('username').value, document.getElementById('password').value)">
                 <input type="button" value="Cancel" id="cancel-btn" onclick="cancel()">
             </form>
         </div>
         
-
         <script src="index.js"></script>
         <script src="account.js"></script>  
     </body>

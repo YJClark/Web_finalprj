@@ -2,6 +2,7 @@ body, html {
   background-color: white;
   margin: 0;
   padding: 0; 
+  overflow-x: hidden;
 }
 
 #top{
@@ -14,11 +15,23 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+#top-hr{ border-bottom: 1px solid green;}
+
+#logo{ 
+  user-select: none;
+  left: 5px;
+  top: 40px;
+  position: sticky;
 }
 
 #top-btn{
-  left: 94%;
-  position: relative;
+  position: fixed;
+  right: 5px;
+  top: 5px;
 }
 
 #call-login, #register{
@@ -29,13 +42,13 @@ body, html {
 }
 
 #call-login:hover, #register:hover{
-  background-color: rgb(72, 216, 46);
+  background-color: rgba(72, 216, 46, 0.75);
 }
 
 #login-icon, #register-icon{
     width: 23px; 
     height: 23px;
-}
+  }
 
 
 

@@ -4,31 +4,56 @@ function register(){
 
 }
 
-function validate(){
-    var username = $('#username').val();
-    var password = $('#password').val();
-//對username用ascii做mod 52，再回傳字母
-alert('Please fill in the username and password');
-
+function validate(vu, vp){
+    if (vu === "" || vp === "")
+        alert("Please enter account and password!")   
+    else if (account.includes(vu)){
+        var index = account.indexOf(vu);
+        if(vp === password[index]){
+        //對username用ascii做mod 65 + 65，再回傳字母
+            var checked = String.fromCharCode(getASCII(vu) % 65 + 65);
+            console.log(checked);
+            login(checked);
+            $('#login-form').dialog('close');
+        }else{
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            alert("Wrong password, please log in again!")
+        }
+    }else
+        alert("Account does not exist, go register or check again!")    
 }
 
+function getASCII(str) {
+    var sum = 0;
+    for (var i = 0; i < str.length; i++)
+        sum += str.charCodeAt(i);
+    return sum;
+}
+
+//串接其他網站
 function login(checked){
     switch(checked){
         //殺手(紅色)
         case "r":
-
+            alert("login killer(red)");
+            break;
         //間諜(紫色)
         case "p":
-
+            alert("login spy(purple)");
+            break;
         //清理(黃色)
         case "y":
-
+            alert("login clearner(yellow)");
+            break;
         //管理(綠色)
         case "g":
-
+            alert("login manager(green)");
+            break;
         //一般人
         default:
-
+            alert("login farmer");
+            break;
     } 
 }
 
@@ -45,8 +70,7 @@ $('#login-form').dialog({
     hide: {
         effect: "fade",
         duration: 500
-    },
-
+    }
 });
 
 $("#call-login").click(function() {
@@ -77,29 +101,4 @@ $(document).ready(function() {
 document.getElementById("call-login").addEventListener("click", function(){
     document.getElementById("login-form").style.display = "block";
 });
-
-
-        function validateLogin() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            if (username === '' || password === '') {
-                alert('Please fill in the username and password');
-                return;
-            }
-            var result = validate(username, password);
-            if (result === 'success') {
-                alert('Login successful');
-            } else {
-                alert('Login failed');
-            }
-        }
-
 */
-
-
-
-
-
-
-
-
