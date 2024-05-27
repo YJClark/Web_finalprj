@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>WebFinal</title>
+        <title>FarmTheMall</title>
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/south-street/jquery-ui.css">
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -18,11 +18,11 @@
             </div>
 
             <div id="top-btn">
-                <button id="call-login">
-                    <img src="Media/login-icon.png" alt="login-icon" id="login-icon" onclick="callLogin()">
+                <button id="call-loginbtn">
+                    <img src="Media/login-icon.png" alt="login-icon" id="login-icon">
                 </button>
-                <button id="register">
-                    <img src="Media/add-user.png" alt="register-icon" id="register-icon" onclick="register()">
+                <button id="registerbtn">
+                    <img src="Media/add-user.png" alt="register-icon" id="register-icon">
                 </button>
             </div>
         </div>
@@ -31,12 +31,42 @@
             <form>
                 <input type="text" id="username" placeholder="Account" required><br><br>
                 <input type="password" id="password" placeholder="Password" required><br><br>
-                <input type="button" value="Login" id="login-btn" onclick="validate(document.getElementById('username').value, document.getElementById('password').value)">
+                <input type="button" value="Login" id="login-btn" onclick="validate()">
                 <input type="button" value="Cancel" id="cancel-btn" onclick="cancel()">
             </form>
         </div>
+
+        <div id="register-form" title="New to FarmTheMall?">
+            <form>
+                <input type="text" id="new_username" placeholder="Account" required><br><br>
+                <input type="password" id="password1" placeholder="Password" required><br><br>
+                <input type="password" id="password2" placeholder="Confirmed Password" required><br><br>
+                <input type="button" value="Confirm" id="register-btn" onclick="register()">
+                <input type="button" value="Cancel" id="cancel-btn" onclick="cancel()">
+            </form>
+        </div>
+
         
-        <script src="index.js"></script>
-        <script src="account.js"></script>  
+
+        <div id="tabs">
+            <a class="title" href="#tabs-1">Seasonal Fruits</a>
+            <a class="title" href="#tabs-2">Seasonal Veggie</a>
+            <a class="title" href="#tabs-3">Implements</a>
+            
+            <div id="tabs-1">
+                <table id="fruits"></table>
+            </div>
+            <div id="tabs-2">
+                <table id="veggie"></table>
+            </div>
+            <div id="tabs-3">
+                <table id="implements"></table>
+            </div>
+        </div>
+
+
+    <script src="index.js"></script>
+    <script src="account.js"></script>  
+
     </body>
 </html>

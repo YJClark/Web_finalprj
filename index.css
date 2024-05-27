@@ -34,14 +34,14 @@ body, html {
   top: 5px;
 }
 
-#call-login, #register{
+#call-loginbtn, #registerbtn{
   border-style: none;
   background-color: white;
   border-radius: 10px;
   transition: background-color 0.5s;
 }
 
-#call-login:hover, #register:hover{
+#call-loginbtn:hover, #registerbtn:hover{
   background-color: rgba(72, 216, 46, 0.75);
 }
 
@@ -49,7 +49,4 @@ body, html {
     width: 23px; 
     height: 23px;
   }
-
-
-
 

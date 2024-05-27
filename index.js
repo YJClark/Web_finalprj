@@ -1,10 +1,27 @@
 function register(){
-
-
-
+    var nu = document.getElementById('new_username').value;
+    var pw1 = document.getElementById('password1').value;
+    var pw2 = document.getElementById('password2').value;
+    if (nu === "" || pw1 === "" || pw2 === ""){
+        alert("Please enter account and password!") 
+    }else if (account.includes(nu)){
+        alert("The account has already existed!")
+    }else if (pw1 !== pw2){
+        alert("Please confirm the password again!")
+    }else{
+        //存入陣列in account.js，程式關掉就刪除了
+        account.push(nu);
+        password.push(pw1);
+        $('#register-form').dialog('close');
+    }
+    document.getElementById('new_username').value = '';
+    document.getElementById('password1').value = '';
+    document.getElementById('password2').value = '';
 }
 
-function validate(vu, vp){
+function validate(){
+    var vu = document.getElementById('username').value;
+    var vp = document.getElementById('password').value;
     if (vu === "" || vp === "")
         alert("Please enter account and password!")   
     else if (account.includes(vu)){
@@ -15,13 +32,13 @@ function validate(vu, vp){
             console.log(checked);
             login(checked);
             $('#login-form').dialog('close');
-        }else{
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
+        }else
             alert("Wrong password, please log in again!")
-        }
     }else
-        alert("Account does not exist, go register or check again!")    
+        alert("Account does not exist, go register or check again!") 
+    
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
 }
 
 function getASCII(str) {
@@ -73,9 +90,38 @@ $('#login-form').dialog({
     }
 });
 
-$("#call-login").click(function() {
-    $("#login-form").dialog("open");
+$('#register-form').dialog({
+    autoOpen: false,
+    modal: false,
+    draggable: false,
+    width: 275, 
+    height: 290,
+    show: {
+        effect: "fade",
+        duration: 500
+    },
+    hide: {
+        effect: "fade",
+        duration: 500
+    }
 });
+
+//登入、註冊button
+$(function(){
+    $("#call-loginbtn").click(function() {
+       ($("#login-form").dialog("isOpen") == false) ? $("#login-form").dialog("open") : $("#login-form").dialog("close");
+       if ($("#register-form").dialog("isOpen") === true)   $("#register-form").dialog("close");
+    });
+ });
+
+ $(function(){
+    $("#registerbtn").click(function() {
+       ($("#register-form").dialog("isOpen") == false) ? $("#register-form").dialog("open") : $("#register-form").dialog("close");
+       if ($("#login-form").dialog("isOpen") === true)   $("#login-form").dialog("close");
+    });
+ });
+
+//做商品頁
 
 
 /*
