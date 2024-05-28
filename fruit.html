@@ -3,17 +3,103 @@
 <head> 
     <meta charset="UTF-8">
     <title>Fruit</title>
+    <link rel="stylesheet" href="fruit.css">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
-    
-
-
-
-
-
-
-
-
+    <main>
+        <table class="product-table">
+            <tr>
+                <td id="apple" class="product-item">
+                    <img src="Media/fruits/apple.jpg" alt="apple">
+                        <p>Apple<br>Price: ₩1,200</p>
+                        <button class="drop1" onclick="decreasePrice(1200)">-</button>
+                        <span id="applenum">0</span>
+                        <button class="get1" onclick="increasePrice(1200)">+</button>
+                </td>
+                <td id="asainpear" class="product-item">
+                    <img src="Media/fruits/asianpear.jpg" alt="asainpear">
+                        <p>Asain Pear<br>Price: ₩1,500</p>
+                        <button class="drop1" onclick="decreasePrice(1500)">-</button>
+                        <span id="asainpearnum">0</span>
+                        <button class="get1" onclick="increasePrice(1500)">+</button>
+                </td>
+                <td id="blueberry" class="product-item">
+                    <img src="Media/fruits/blueberry.jpg" alt="blueberry">
+                        <p>Blueberry<br>Price: ₩2,100</p>
+                        <button class="drop1" onclick="decreasePrice(2100)">-</button>
+                        <span id="blueberrynum">0</span>
+                        <button class="get1" onclick="increasePrice(2100)">+</button>
+                </td>
+                <td id="dragonfruit" class="product-item">
+                    <img src="Media/fruits/dragonfruit.jpg" alt="dragonfruit">
+                        <p>Dragonfruit<br>Price: ₩2,100 for each</p>
+                        <button class="drop1" onclick="decreasePrice(2100)">-</button>
+                        <span id="dragonfruitnum">0</span>
+                        <button class="get1" onclick="increasePrice(2100)">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="guava" class="product-item">
+                    <img src="Media/fruits/guava.jpg" alt="guava">
+                        <p>Guava<br>Price: ₩900</p>
+                        <button class="drop1" onclick="decreasePrice(900)">-</button>
+                        <span id="guavanum">0</span>
+                        <button class="get1" onclick="increasePrice(900)">+</button>
+                </td>
+                <td id="mango" class="product-item">
+                    <img src="Media/fruits/mango.jpg" alt="mango">
+                        <p>Mango<br>Price: ₩1,500</p>
+                        <button class="drop1" onclick="decreasePrice(1500)">-</button>
+                        <span id="mangonum">0</span>
+                        <button class="get1" onclick="increasePrice(1500)">+</button>
+                </td>
+                <td id="passionfruit" class="product-item">
+                    <img src="Media/fruits/passionfruit.jpg" alt="passionfruit">
+                        <p>Passion Fruit<br>Price: ₩1,200</p>
+                        <button class="drop1" onclick="decreasePrice(1200)">-</button>
+                        <span id="passionfruitnum">0</span>
+                        <button class="get1" onclick="increasePrice(1200)">+</button>
+                </td>
+                <td id="sweetmelon" class="product-item">
+                    <img src="Media/fruits/sweetmelon.jpg" alt="sweetmelon">
+                        <p>Sweetmelon<br>Price: ₩2,400</p>
+                        <button class="drop1" onclick="decreasePrice(2100)">-</button>
+                        <span id="sweetmelonnum">0</span>
+                        <button class="get1" onclick="increasePrice(2100)">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="tangerine" class="product-item">
+                    <img src="Media/fruits/tangerine.jpg" alt="tangerine">
+                        <p>Guava<br>Price: ₩900</p>
+                        <button class="drop1" onclick="decreasePrice(900)">-</button>
+                        <span id="tangerinenum">0</span>
+                        <button class="get1" onclick="increasePrice(900)">+</button>
+                </td>
+                <td id="tomato" class="product-item">
+                    <img src="Media/fruits/tomato.jpg" alt="tomato">
+                        <p>Tomato<br>Price: ₩600</p>
+                        <button class="drop1" onclick="decreasePrice(600)">-</button>
+                        <span id="tomatonum">0</span>
+                        <button class="get1" onclick="increasePrice(600)">+</button>
+                </td>
+                <td id="watermelon" class="product-item">
+                    <img src="Media/fruits/watermelon.jpg" alt="watermelon">
+                        <p>Watermelon<br>Price: ₩3,000</p>
+                        <button class="drop1" onclick="decreasePrice(3000)">-</button>
+                        <span id="passionfruitnum">0</span>
+                        <button class="get1" onclick="increasePrice(3000)">+</button>
+                </td>
+                <td id="waxapple" class="product-item">
+                    <img src="Media/fruits/waxapple.jpg" alt="waxapple">
+                        <p>Wax Apple<br>Price: ₩900</p>
+                        <button class="drop1" onclick="decreasePrice(900)">-</button>
+                        <span id="waxapplenum">0</span>
+                        <button class="get1" onclick="increasePrice(900)">+</button>
+                </td>
+            </tr>
+        </table>
+    </main>
 </body>
 </html>

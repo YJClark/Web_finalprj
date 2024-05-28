@@ -1,0 +1,85 @@
+body {
+    font: 20px Andale Mono, monospace;
+    color: #000000;
+    margin: 0;
+    padding: 0 5px 0 5px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+.product-table {
+    z-index: 999;
+    width: 100%;
+    margin: 20px 0;
+    border-color: white;
+    display: table;
+}
+
+.product-table td {
+    width: 25%;
+    padding: 5px;
+    text-align: center;
+   /* background-color: rgba(6, 128, 4, 0.7);
+    border: 1px solid #444;
+    color: white;*/
+}
+
+.product-table img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; /* 保持3D變換 */
+}
+
+.product-item {
+    position: relative;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-item:hover img {
+    transform: rotateY(180deg); /* 懸停時旋轉圖片180度 */
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.product-table tr {
+    animation: slide-in 1s ease-out;
+    opacity: 1; /* 確保動畫結束後保持可見 */
+}
+
+/* 為每個行增加不同的延遲 */
+.product-table tr:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.product-table tr:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.product-table tr:nth-child(3) {
+    animation-delay: 0.6s;
+}
