@@ -14,7 +14,7 @@
             <hr id="top-hr">
 
             <div id="logo">
-                <h2>FarmTheMall</h2>
+                <span>FarmTheMall</span>
             </div>
 
             <div id="top-btn">
@@ -46,27 +46,20 @@
             </form>
         </div>
 
-        
-
-        <div id="tabs">
-            <a class="title" href="#tabs-1">Seasonal Fruits</a>
-            <a class="title" href="#tabs-2">Seasonal Veggie</a>
-            <a class="title" href="#tabs-3">Implements</a>
-            
-            <div id="tabs-1">
-                <table id="fruits"></table>
-            </div>
-            <div id="tabs-2">
-                <table id="veggie"></table>
-            </div>
-            <div id="tabs-3">
-                <table id="implements"></table>
-            </div>
+    
+        <div id="product">
+            <ul id="tabs">
+                <li><a class="option" target="page" href="./fruit.html">Seasonal Fruits</a></li>
+                <li><a class="option" target="page" href="./veggie.html">Seasonal Veggie</a></li>
+                <li><a class="option" target="page" href="./implement.html">Implements</a></li>
+            </ul>
         </div>
-
+            
+        <div>
+            <iframe id="product_iframe" name="page"></iframe>
+        </div>
 
     <script src="index.js"></script>
     <script src="account.js"></script>  
-
     </body>
 </html>

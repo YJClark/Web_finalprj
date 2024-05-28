@@ -53,7 +53,7 @@ function login(checked){
     switch(checked){
         //殺手(紅色)
         case "r":
-            alert("login killer(red)");
+            window.location.href = "網頁設計/code_red.html";
             break;
         //間諜(紫色)
         case "p":
@@ -74,18 +74,33 @@ function login(checked){
     } 
 }
 
+function cancel(){
+    if($("#login-form").dialog("isOpen")) {
+        $("#login-form").dialog("close");
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+    }
+    if($("#register-form").dialog("isOpen")) {
+        $("#register-form").dialog("close");
+        document.getElementById('new_username').value = '';
+        document.getElementById('password1').value = '';
+        document.getElementById('password2').value = '';
+    }
+}
+
 $('#login-form').dialog({
     autoOpen: false,
     modal: false,
-    draggable: false,
-    width: 275, 
-    height: 250,
+    resizable: false,
+    width: 275,
+    height: 210,
+    position: { my: "left top", at: "right top+6%" },
     show: {
-        effect: "fade",
+        effect: "fold",
         duration: 500
     },
     hide: {
-        effect: "fade",
+        effect: "blind",
         duration: 500
     }
 });
@@ -93,15 +108,16 @@ $('#login-form').dialog({
 $('#register-form').dialog({
     autoOpen: false,
     modal: false,
-    draggable: false,
-    width: 275, 
-    height: 290,
+    resizable: false,
+    width: 275,
+    height: 255,
+    position: { my: "left top", at: "right top+6%" },
     show: {
-        effect: "fade",
+        effect: "fold",
         duration: 500
     },
     hide: {
-        effect: "fade",
+        effect: "blind",
         duration: 500
     }
 });
@@ -120,31 +136,3 @@ $(function(){
        if ($("#login-form").dialog("isOpen") === true)   $("#login-form").dialog("close");
     });
  });
-
-//做商品頁
-
-
-/*
-$(document).ready(function() {
-    $("#login-btn").button();
-    $("#login-form").dialog({
-        autoOpen: false,
-        modal: true,
-        width: 300,
-        height: 200,
-        buttons: {
-            "Login": function() {
-                login();
-                $(this).dialog("close");
-            }
-        }
-    });
-    $("#login-btn").click(function() {
-        $("#login-form").dialog("open");
-    });
-});
-
-document.getElementById("call-login").addEventListener("click", function(){
-    document.getElementById("login-form").style.display = "block";
-});
-*/

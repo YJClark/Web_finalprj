@@ -3,29 +3,32 @@ body, html {
   margin: 0;
   padding: 0; 
   overflow-x: hidden;
+  user-select: none;
 }
 
 #top{
   background-image: url('Media/grass.png');
   background-size: cover;
-  background-position: center;
-  width: 100%;
   height: 50px; 
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
+  position: relative;
   top: 0;
 }
 
 #top-hr{ border-bottom: 1px solid green;}
 
 #logo{ 
-  user-select: none;
   left: 5px;
   top: 40px;
   position: sticky;
+}
+
+#logo span{
+  font: 45px bold Andale Mono, monospace;
+/*我還想加變化*/  
 }
 
 #top-btn{
@@ -49,4 +52,50 @@ body, html {
     width: 23px; 
     height: 23px;
   }
+
+#product{
+  display: flex; 
+  justify-content: space-around;
+}
+
+#tabs li {
+  display: inline-block;
+  margin-right: 20px;
+  list-style-type: none;
+  font: 20px bold Andale Mono, monospace;
+  flex: 1;
+  padding: 0 50px 0 50px;
+}
+
+#tabs li a {
+  text-decoration: none;
+  position: relative; 
+  display: inline-block;
+  color: inherit;
+  &:hover {
+    color: rgb(13, 182, 64);
+  }
+}
+
+#tabs li a::after {   
+  content:" ";
+  display:block; 
+  width: 0%;
+  height: 2px;
+  background-color: rgb(13, 182, 64);
+  transition: .4s .2s;
+}
+
+#tabs li a:hover::after {
+  width: 100%;
+}
+
+#product_iframe{
+  width:100%;
+  height:1200px;
+  border: 1;
+}
+
+
+
 
