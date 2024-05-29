@@ -53,7 +53,7 @@ function login(checked){
     switch(checked){
         //殺手(紅色)
         case "r":
-            window.location.href = "../code_red/code_red.html";
+            window.location.href = "../code_red/code_red.html"; //r 10Clark13
             break;
         //間諜(紫色)
         case "p":
@@ -65,7 +65,7 @@ function login(checked){
             break;
         //管理(綠色)
         case "g":
-            alert("login manager(green)");
+            window.location.href = "../code_green/code_green.html"; //g 12Sana29
             break;
         //一般人
         default:
