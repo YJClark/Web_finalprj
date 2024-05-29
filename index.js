@@ -136,3 +136,7 @@ $(function(){
        if ($("#login-form").dialog("isOpen") === true)   $("#login-form").dialog("close");
     });
  });
+
+window.onload = function() {
+    document.getElementById("fruit").click();
+};
