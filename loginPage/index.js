@@ -53,7 +53,7 @@ function login(checked){
     switch(checked){
         //殺手(紅色)
         case "r":
-            window.location.href = "../網頁設計/code_red.html";
+            window.location.href = "../code_red/code_red.html";
             break;
         //間諜(紫色)
         case "p":
@@ -137,6 +137,7 @@ $(function(){
     });
  });
 
+ //這裡先觸發fruit.html
 window.onload = function() {
     document.getElementById("fruit").click();
 };

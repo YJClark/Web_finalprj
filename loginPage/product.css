@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    user-select: none;
 }
 
 main {
@@ -62,21 +63,41 @@ main {
     }
 }
 
-
-.product-table tr {
-    animation: slide-in 1s ease-out;
-    opacity: 1; /* 確保動畫結束後保持可見 */
+@keyframes slide-in-reverse {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
-/* 為每個行增加不同的延遲 */
 .product-table tr:nth-child(1) {
+    animation: slide-in 1.2s ease-out;
+    opacity: 1; /* 確保動畫結束後保持可見 */
     animation-delay: 0.2s;
 }
 
 .product-table tr:nth-child(2) {
+    animation: slide-in-reverse 1.2s ease-out;
+    opacity: 1; /* 確保動畫結束後保持可見 */
     animation-delay: 0.4s;
 }
 
 .product-table tr:nth-child(3) {
+    animation: slide-in 1.2s ease-out;
+    opacity: 1; /* 確保動畫結束後保持可見 */
     animation-delay: 0.6s;
+}
+
+button{
+    border: none;
+    font: 20px Andale Mono, monospace;
+    transition: transform 0.1s ease;
+}
+
+button.clicked {
+    transform: scale(1.2);
 }

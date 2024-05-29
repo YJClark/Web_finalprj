@@ -93,8 +93,8 @@ body, html {
 #product_iframe{
   display: block;
   margin: 0 auto;
-  width: 90%;
-  height: 1200px;
+  width: 87%;
+  height: 1300px;
   border: none;
   overflow: hidden;
 }
