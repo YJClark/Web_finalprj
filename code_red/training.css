@@ -1,0 +1,165 @@
+/* training.css */
+
+/* 武器选择区域 */
+#weaponContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* 武器框样式 */
+.weapon {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: url('aim.png'), auto;
+    transition: border-color 0.3s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 不同武器的背景图 */
+#pistol{
+    background-image: url('pistol.png');
+}
+#sniper{
+    background-image: url('sniper.png');
+}
+#throwingaxe{
+    background-image: url('throwingAxe.png');
+}
+#grenade{
+    background-image: url('grenade.png');
+}
+
+/* 选中状态下武器的边框颜色 */
+.weapon.selected {
+    border-color: yellow; 
+}
+/* training.css */
+
+#bulletDisplay {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    font-size: 60px;
+}
+
+.bullet {
+    width: 120px; 
+    height: 120px; 
+    background-image: url('bullets.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+	float:left;
+}
+
+/* 火花样式 */
+.spark {
+    width: 30px;
+    height: 30px;
+    background-image: url('spark.png');
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999; /* 确保在其他内容上面显示 */
+    opacity: 0.7;
+}
+
+/* 弹孔样式 */
+.bulletHole {
+    width: 12px;
+    height: 12px;
+    background-image: url('hole.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 9998; /* 确保在火花下面显示 */
+}
+
+/* 设置全局鼠标样式 */
+body,html{
+    cursor: url('aim.png'), auto;   
+}
+.zoomed {
+    transform: scale(10); /* 设置放大倍数，这里是放大为原来的两倍 */
+    transform-origin: center; /* 设置放大中心为画面的中心 */
+}
+  #pos {
+      filter: blur(1px);
+      backdrop-filter: blur(6px);
+      position: relative;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      height: 400px;
+      width: 400px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 5px solid rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 0px 15px rgb(0, 0, 0), 0px 0px 15px 8px rgb(0, 0, 0) inset;
+      transition: 0.3s ease-out;
+	  
+    }
+    #pos:hover {
+      backdrop-filter: none;
+      filter: none;
+      box-shadow: 0px 0px 15px 5px rgb(0, 0, 0) inset;
+    }
+    #chlid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #pos:hover #aim1 {
+      box-shadow: none;
+    }
+    #pos:hover #aim2 {
+      box-shadow: none;
+    }
+    /* 纵轴 */
+    #aim1 {
+      position: absolute;
+      margin-left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 0px 8px 2px #000;
+      width: 1px;
+      height: 100%;
+      transition: 0.3s ease-out;
+    }
+    /* 横轴 */
+    #aim2 {
+      position: absolute;
+      margin-top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 0px 8px 2px #000;
+      width: 100%;
+      height: 1px;
+      transition: 0.3s ease-out;
+    }
+#statusMessage {
+	text-align:center;
+    position: fixed;
+    bottom: 20px;
+    left: 30%;
+    border-radius: 5px;
+	
+}#statusBar {
+	width: 500px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+	text-align:center;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    display: none; 
+}

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guns</title>
+    <link rel="stylesheet" href="guns.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="guns.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="category-container">
+            <span onclick="showItem(this)">Handgun</span>
+            <div id="1" class="gun-list"></div>
+            <span onclick="showItem(this)">MachineGun</span>
+            <div id="2" class="gun-list"></div>
+            <span onclick="showItem(this)">SMG</span>
+            <div id="3" class="gun-list"></div>
+            <span onclick="showItem(this)">Rifle</span>
+            <div id="4" class="gun-list"></div>
+            <span onclick="showItem(this)">SniperRifle</span>
+            <div id="5" class="gun-list"></div>
+            <span onclick="showItem(this)">Shotgun</span>
+            <div id="6" class="gun-list"></div>
+        </div>
+        <div class="product-table-container">
+		<table class="product-table" id="Revolver">
+			<tr>
+				<td id="R020" class="product-item">
+					<img src="images/R020.jpg" alt="Item R020">
+					<p>Item No. R020<br>Price: ₩1,100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'R020.jpg')">Buy Now</button>
+				</td>
+				<td id="R021" class="product-item">
+					<img src="images/R021.jpg" alt="Item R021">
+					<p>Item No. R021<br>Price: ₩1,150</p>
+					<button class="buy-button" onclick="updatePrice(1150,'R021.jpg')">Buy Now</button>
+				</td>
+				<td id="R033"	class="product-item">
+					<img src="images/R033.jpg" alt="Item R033">
+					<p>Item No. R033<br>Price: ₩1,200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'R033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="R009"	class="product-item">
+					<img src="images/R009.jpg" alt="Item R009">
+					<p>Item No. R009<br>Price: ₩1,250</p>
+					<button class="buy-button" onclick="updatePrice(1250,'R009.jpg')">Buy Now</button>
+				</td>
+				<td id="R022"	class="product-item">
+					<img src="images/R022.jpg" alt="Item R022">
+					<p>Item No. R022<br>Price: ₩1,300</p>
+					<button class="buy-button" onclick="updatePrice(1300,'R022.jpg')">Buy Now</button>
+				</td>
+				<td id="R023"	class="product-item">
+					<img src="images/R023.jpg" alt="Item R021">
+					<p>Item No. R021<br>Price: ₩1,350</p>
+					<button class="buy-button" onclick="updatePrice(1350,'R023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="R041"	class="product-item">
+					<img src="images/R041.jpg" alt="Item R041">
+					<p>Item No. R01<br>Price: ₩1,050</p>
+					<button class="buy-button" onclick="updatePrice(1050,'R041.jpg')">Buy Now</button>
+				</td>
+				<td id="R042"	class="product-item">
+					<img src="images/R042.jpg" alt="Item R042">
+					<p>Item No. R042<br>Price: ₩1,100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'R042.jpg')">Buy Now</button>
+				</td>
+				<td id="R043"	class="product-item">
+					<img src="images/R043.jpg" alt="Item R043">
+					<p>Item No. R043<br>Price: ₩1,450</p>
+					<button class="buy-button" onclick="updatePrice(1450,'R043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="Derringer">
+			<tr>
+				<td id="D020" class="product-item">
+					<img src="images/D020.jpg" alt="Item D020">
+					<p>Item No. D020<br>Price: ₩1,100</p>
+					<button class="buy-button"onclick="updatePrice(1100,'D020.jpg')">Buy Now</button>
+				</td>
+				<td id="D021" class="product-item">
+					<img src="images/D021.jpg" alt="Item D021">
+					<p>Item No. D021<br>Price: ₩1,150</p>
+					<button class="buy-button"onclick="updatePrice(1150,'D021.jpg')">Buy Now</button>
+				</td>
+				<td id="D033" class="product-item">
+					<img src="images/D033.jpg" alt="Item D033">
+					<p>Item No. D033<br>Price: ₩1,200</p>
+					<button class="buy-button"onclick="updatePrice(1200,'D033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="D009" class="product-item">
+					<img src="images/D009.jpg" alt="Item D009">
+					<p>Item No. D009<br>Price: ₩1,250</p>
+					<button class="buy-button"onclick="updatePrice(1200,'D009.jpg')">Buy Now</button>
+				</td>
+				<td id="D022" class="product-item">
+					<img src="images/D022.jpg" alt="Item D022">
+					<p>Item No. D022<br>Price: ₩1,300</p>
+					<button class="buy-button" onclick="updatePrice(1300,'D022.jpg')">Buy Now</button>
+				</td>
+				<td id="D023" class="product-item">
+					<img src="images/D023.jpg" alt="Item D023">
+					<p>Item No. D023<br>Price: ₩1,350</p>
+					<button class="buy-button" onclick="updatePrice(1350,'D023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="D041" class="product-item">
+					<img src="images/D041.jpg" alt="Item D041">
+					<p>Item No. D041<br>Price: ₩1,050</p>
+					<button class="buy-button" onclick="updatePrice(1050,'D041.jpg')">Buy Now</button>
+				</td>
+				<td id="D042" class="product-item">
+					<img src="images/D042.jpg" alt="Item D042">
+					<p>Item No. D042<br>Price: ₩1,100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'D042.jpg')">Buy Now</button>
+				</td>
+				<td id="D043" class="product-item">
+					<img src="images/D043.jpg" alt="Item D043">
+					<p>Item No. D043<br>Price: ₩1,450</p>
+					<button class="buy-button" onclick="updatePrice(1450,'D043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="Pistol">
+			<tr>
+				<td id="P020" class="product-item">
+					<img src="images/P020.jpg" alt="Item P020">
+					<p>Item No. P020<br>Price: ₩950</p>
+					<button class="buy-button"onclick="updatePrice(950,'P020.jpg')">Buy Now</button>
+				</td>
+				<td id="P021" class="product-item">
+					<img src="images/P021.jpg" alt="Item P021">
+					<p>Item No. P021<br>Price: ₩1,000</p>
+					<button class="buy-button" onclick="updatePrice(1000,'P021.jpg')">Buy Now</button>
+				</td>
+				<td id="P033" class="product-item">
+					<img src="images/P033.jpg" alt="Item P033">
+					<p>Item No. P033<br>Price: ₩1,150</p>
+					<button class="buy-button" onclick="updatePrice(1150,'P033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="P009" class="product-item">
+					<img src="images/P009.jpg" alt="Item P009">
+					<p>Item No. P009<br>Price: ₩1,200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'P009.jpg')">Buy Now</button>
+				</td>
+				<td id="P022" class="product-item">
+					<img src="images/P022.jpg" alt="Item P022">
+					<p>Item No. P022<br>Price: ₩1,250</p>
+					<button class="buy-button" onclick="updatePrice(1250,'P022.jpg')">Buy Now</button>
+				</td>
+				<td id="P023" class="product-item">
+					<img src="images/P023.jpg" alt="Item P023">
+					<p>Item No. P023<br>Price: ₩1,300</p>
+					<button class="buy-button"onclick="updatePrice(1300,'P023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="P041" class="product-item">
+					<img src="images/P041.jpg" alt="Item P041">
+					<p>Item No. P041<br>Price: ₩1,350</p>
+					<button class="buy-button"onclick="updatePrice(1350,'P041.jpg')">Buy Now</button>
+				</td>
+				<td id="P042" class="product-item">
+					<img src="images/P042.jpg" alt="Item P042">
+					<p>Item No. P042<br>Price: ₩1,400</p>
+					<button class="buy-button"onclick="updatePrice(1400,'P042.jpg')">Buy Now</button>
+				</td>
+				<td id="P043" class="product-item">
+					<img src="images/P043.jpg" alt="Item P043">
+					<p>Item No. P043<br>Price: ₩1,450</p>
+					<button class="buy-button"onclick="updatePrice(1450,'P043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="M60">
+			<tr>
+				<td id="M6020" class="product-item">
+					<img src="images/M6020.jpg" alt="Item M6020">
+					<p>Item No. M6020<br>Price: ₩980</p>
+					<button class="buy-button" onclick="updatePrice(980,'M6020.jpg')">Buy Now</button>
+				</td>
+				<td id="M6021" class="product-item">
+					<img src="images/M6021.jpg" alt="Item M6021">
+					<p>Item No. M6021<br>Price: ₩1,020</p>
+					<button class="buy-button" onclick="updatePrice(1020,'M6021.jpg')">Buy Now</button>
+				</td>
+				<td id="M6033" class="product-item">
+					<img src="images/M6033.jpg" alt="Item M6033">
+					<p>Item No. M6033<br>Price: ₩1,070</p>
+					<button class="buy-button" onclick="updatePrice(1070,'M6033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="M6009" class="product-item">
+					<img src="images/M6009.jpg" alt="Item M6009">
+					<p>Item No. M6009<br>Price: ₩1,120</p>
+					<button class="buy-button" onclick="updatePrice(1120,'M6009.jpg')">Buy Now</button>
+				</td>
+				<td id="M6022" class="product-item">
+					<img src="images/M6022.jpg" alt="Item M6022">
+					<p>Item No. M6022<br>Price: ₩1,160</p>
+					<button class="buy-button" onclick="updatePrice(1160,'M6022.jpg')">Buy Now</button>
+				</td>
+				<td id="M6023" class="product-item">
+					<img src="images/M6023.jpg" alt="Item M6023">
+					<p>Item No. M6023<br>Price: ₩1,200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'M6023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="M6041" class="product-item">
+					<img src="images/M6041.jpg" alt="Item M6041">
+					<p>Item No. M6041<br>Price: ₩1,240</p>
+					<button class="buy-button" onclick="updatePrice(1240,'M6041.jpg')">Buy Now</button>
+				</td>
+				<td id="M6042" class="product-item">
+					<img src="images/M6042.jpg" alt="Item M6042">
+					<p>Item No. M6042<br>Price: ₩1,280</p>
+					<button class="buy-button" onclick="updatePrice(1280,'M6042.jpg')">Buy Now</button>
+				</td>
+				<td id="M6043" class="product-item">
+					<img src="images/M6043.jpg" alt="Item M6043">
+					<p>Item No. M6043<br>Price: ₩1,320</p>
+					<button class="buy-button" onclick="updatePrice(1320,'M6043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+
+		<table class="product-table" id="MachinePistol">
+			<tr>
+				<td id="MP020" class="product-item">
+					<img src="images/MP020.jpg" alt="Item MP020">
+					<p>Item No. MP020<br>Price: ₩980</p>
+					<button class="buy-button"onclick="updatePrice(980,'MP020.jpg')">Buy Now</button>
+				</td>
+				<td id="MP021" class="product-item">
+					<img src="images/MP021.jpg" alt="Item MP021">
+					<p>Item No. MP021<br>Price: ₩1,020</p>
+					<button class="buy-button"onclick="updatePrice(1020,'MP021.jpg')">Buy Now</button>
+				</td>
+				<td id="MP033" class="product-item">
+					<img src="images/MP033.jpg" alt="Item MP033">
+					<p>Item No. MP033<br>Price: ₩1,070</p>
+					<button class="buy-button"onclick="updatePrice(1070,'MP033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="MP009" class="product-item">
+					<img src="images/MP009.jpg" alt="Item MP009">
+					<p>Item No. MP009<br>Price: ₩1,120</p>
+					<button class="buy-button" onclick="updatePrice(1120,'MP009.jpg')">Buy Now</button>
+				</td>
+				<td id="MP022" class="product-item">
+					<img src="images/MP022.jpg" alt="Item MP022">
+					<p>Item No. MP022<br>Price: ₩1,160</p>
+					<button class="buy-button"onclick="updatePrice(1160,'MP022.jpg')">Buy Now</button>
+				</td>
+				<td id="MP023" class="product-item">
+					<img src="images/MP023.jpg" alt="Item MP023">
+					<p>Item No. MP023<br>Price: ₩1,200</p>
+					<button class="buy-button"onclick="updatePrice(1200,'MP023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="MP041" class="product-item">
+					<img src="images/MP041.jpg" alt="Item MP041">
+					<p>Item No. MP041<br>Price: ₩1,240</p>
+					<button class="buy-button"onclick="updatePrice(1240,'MP041.jpg')">Buy Now</button>
+				</td>
+				<td id="MP042" class="product-item">
+					<img src="images/MP042.jpg" alt="Item MP042">
+					<p>Item No. MP042<br>Price: ₩1,280</p>
+					<button class="buy-button"onclick="updatePrice(1280,'MP042.jpg')">Buy Now</button>
+				</td>
+				<td id="MP043" class="product-item">
+					<img src="images/MP043.jpg" alt="Item MP043">
+					<p>Item No. MP043<br>Price: ₩1,320</p>
+					<button class="buy-button"onclick="updatePrice(1320,'MP043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		
+		<table class="product-table" id="MMG">
+			<tr>
+				<td id="MMG020" class="product-item">
+					<img src="images/MMG020.jpg" alt="Item MMG020">
+					<p>Item No. MMG020<br>Price: ₩890</p>
+					<button class="buy-button" onclick="updatePrice(890,'MMG020.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG021" class="product-item">
+					<img src="images/MMG021.jpg" alt="Item MMG021">
+					<p>Item No. MMG021<br>Price: ₩950</p>
+					<button class="buy-button" onclick="updatePrice(950,'MMG021.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG033" class="product-item">
+					<img src="images/MMG033.jpg" alt="Item MMG033">
+					<p>Item No. MMG033<br>Price: ₩1100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'MMG033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="MMG009" class="product-item">
+					<img src="images/MMG009.jpg" alt="Item MMG009">
+					<p>Item No. MMG009<br>Price: ₩1200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'MMG009.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG022" class="product-item">
+					<img src="images/MMG022.jpg" alt="Item MMG022">
+					<p>Item No. MMG022<br>Price: ₩1300</p>
+					<button class="buy-button" onclick="updatePrice(1300,'MMG022.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG023" class="product-item">
+					<img src="images/MMG023.jpg" alt="Item MMG023">
+					<p>Item No. MMG023<br>Price: ₩1400</p>
+					<button class="buy-button" onclick="updatePrice(1400,'MMG023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="MMG041" class="product-item">
+					<img src="images/MMG041.jpg" alt="Item MMG041">
+					<p>Item No. MMG041<br>Price: ₩1500</p>
+					<button class="buy-button" onclick="updatePrice(1500,'MMG041.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG042" class="product-item">
+					<img src="images/MMG042.jpg" alt="Item MMG042">
+					<p>Item No. MMG042<br>Price: ₩1600</p>
+					<button class="buy-button" onclick="updatePrice(1600,'MMG042.jpg')">Buy Now</button>
+				</td>
+				<td id="MMG043" class="product-item">
+					<img src="images/MMG043.jpg" alt="Item MMG043">
+					<p>Item No. MMG043<br>Price: ₩1700</p>
+					<button class="buy-button" onclick="updatePrice(1700,'MMG043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+				<table class="product-table" id="LMG">
+			<tr>
+				<td id="LMG020" class="product-item">
+					<img src="images/LMG020.jpg" alt="Item LMG020">
+					<p>Item No. LMG020<br>Price: ₩850</p>
+					<button class="buy-button" onclick="updatePrice(850,'LMG020.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG021" class="product-item">
+					<img src="images/LMG021.jpg" alt="Item LMG021">
+					<p>Item No. LMG021<br>Price: ₩900</p>
+					<button class="buy-button" onclick="updatePrice(900,'LMG021.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG033" class="product-item">
+					<img src="images/LMG033.jpg" alt="Item LMG033">
+					<p>Item No. LMG033<br>Price: ₩950</p>
+					<button class="buy-button" onclick="updatePrice(950,'LMG033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="LMG009" class="product-item">
+					<img src="images/LMG009.jpg" alt="Item LMG009">
+					<p>Item No. LMG009<br>Price: ₩1000</p>
+					<button class="buy-button" onclick="updatePrice(1000,'LMG009.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG022" class="product-item">
+					<img src="images/LMG022.jpg" alt="Item LMG022">
+					<p>Item No. LMG022<br>Price: ₩1050</p>
+					<button class="buy-button" onclick="updatePrice(1050,'LMG022.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG023" class="product-item">
+					<img src="images/LMG023.jpg" alt="Item LMG023">
+					<p>Item No. LMG023<br>Price: ₩1100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'LMG023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="LMG041" class="product-item">
+					<img src="images/LMG041.jpg" alt="Item LMG041">
+					<p>Item No. LMG041<br>Price: ₩1150</p>
+					<button class="buy-button" onclick="updatePrice(1150,'LMG041.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG042" class="product-item">
+					<img src="images/LMG042.jpg" alt="Item LMG042">
+					<p>Item No. LMG042<br>Price: ₩1200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'LMG042.jpg')">Buy Now</button>
+				</td>
+				<td id="LMG043" class="product-item">
+					<img src="images/LMG043.jpg" alt="Item LMG043">
+					<p>Item No. LMG043<br>Price: ₩1250</p>
+					<button class="buy-button" onclick="updatePrice(1250,'LMG043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="HMG">
+			<tr>
+				<td id="HMG020" class="product-item">
+					<img src="images/HMG020.jpg" alt="Item HMG020">
+					<p>Item No. HMG020<br>Price: ₩800</p>
+					<button class="buy-button" onclick="updatePrice(800,'HMG020.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG021" class="product-item">
+					<img src="images/HMG021.jpg" alt="Item HMG021">
+					<p>Item No. HMG021<br>Price: ₩850</p>
+					<button class="buy-button" onclick="updatePrice(850,'HMG021.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG033" class="product-item">
+					<img src="images/HMG033.jpg" alt="Item HMG033">
+					<p>Item No. HMG033<br>Price: ₩900</p>
+					<button class="buy-button" onclick="updatePrice(900,'HMG033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="HMG009" class="product-item">
+					<img src="images/HMG009.jpg" alt="Item HMG009">
+					<p>Item No. HMG009<br>Price: ₩950</p>
+					<button class="buy-button" onclick="updatePrice(950,'HMG009.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG022" class="product-item">
+					<img src="images/HMG022.jpg" alt="Item HMG022">
+					<p>Item No. HMG022<br>Price: ₩1000</p>
+					<button class="buy-button" onclick="updatePrice(1000,'HMG022.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG023" class="product-item">
+					<img src="images/HMG023.jpg" alt="Item HMG023">
+					<p>Item No. HMG023<br>Price: ₩1050</p>
+					<button class="buy-button" onclick="updatePrice(1050,'HMG023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="HMG041" class="product-item">
+					<img src="images/HMG041.jpg" alt="Item HMG041">
+					<p>Item No. HMG041<br>Price: ₩1100</p>
+					<button class="buy-button" onclick="updatePrice(1100,'HMG041.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG042" class="product-item">
+					<img src="images/HMG042.jpg" alt="Item HMG042">
+					<p>Item No. HMG042<br>Price: ₩1150</p>
+					<button class="buy-button" onclick="updatePrice(1150,'HMG042.jpg')">Buy Now</button>
+				</td>
+				<td id="HMG043" class="product-item">
+					<img src="images/HMG043.jpg" alt="Item HMG043">
+					<p>Item No. HMG043<br>Price: ₩1200</p>
+					<button class="buy-button" onclick="updatePrice(1200,'HMG043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		
+		<table class="product-table" id="SubmachineGun">
+			<tr>
+				<td id="SMG020" class="product-item">
+					<img src="images/SMG020.jpg" alt="Item SMG020">
+					<p>Item No. SMG020<br>Price: ₩780</p>
+					<button class="buy-button" onclick="updatePrice(780,'SMG020.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG021" class="product-item">
+					<img src="images/SMG021.jpg" alt="Item SMG021">
+					<p>Item No. SMG021<br>Price: ₩830</p>
+					<button class="buy-button" onclick="updatePrice(830,'SMG021.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG033" class="product-item">
+					<img src="images/SMG033.jpg" alt="Item SMG033">
+					<p>Item No. SMG033<br>Price: ₩880</p>
+					<button class="buy-button" onclick="updatePrice(880,'SMG033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="SMG009" class="product-item">
+					<img src="images/SMG009.jpg" alt="Item SMG009">
+					<p>Item No. SMG009<br>Price: ₩930</p>
+					<button class="buy-button" onclick="updatePrice(930,'SMG009.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG022" class="product-item">
+					<img src="images/SMG022.jpg" alt="Item SMG022">
+					<p>Item No. SMG022<br>Price: ₩980</p>
+					<button class="buy-button" onclick="updatePrice(980,'SMG022.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG023" class="product-item">
+					<img src="images/SMG023.jpg" alt="Item SMG023">
+					<p>Item No. SMG023<br>Price: ₩1030</p>
+					<button class="buy-button" onclick="updatePrice(1030,'SMG023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="SMG041" class="product-item">
+					<img src="images/SMG041.jpg" alt="Item SMG041">
+					<p>Item No. SMG041<br>Price: ₩1080</p>
+					<button class="buy-button" onclick="updatePrice(1080,'SMG041.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG042" class="product-item">
+					<img src="images/SMG042.jpg" alt="Item SMG042">
+					<p>Item No. SMG042<br>Price: ₩1130</p>
+					<button class="buy-button" onclick="updatePrice(1130,'SMG042.jpg')">Buy Now</button>
+				</td>
+				<td id="SMG043" class="product-item">
+					<img src="images/SMG043.jpg" alt="Item SMG043">
+					<p>Item No. SMG043<br>Price: ₩1180</p>
+					<button class="buy-button" onclick="updatePrice(1180,'SMG043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="AssaultRifle">
+			<tr>
+				<td id="AR020" class="product-item">
+					<img src="images/AR020.jpg" alt="Item AR020">
+					<p>Item No. AR020<br>Price: ₩820</p>
+					<button class="buy-button" onclick="updatePrice(820,'AR020.jpg')">Buy Now</button>
+				</td>
+				<td id="AR021" class="product-item">
+					<img src="images/AR021.jpg" alt="Item AR021">
+					<p>Item No. AR021<br>Price: ₩870</p>
+					<button class="buy-button" onclick="updatePrice(870,'AR021.jpg')">Buy Now</button>
+				</td>
+				<td id="AR033" class="product-item">
+					<img src="images/AR033.jpg" alt="Item AR033">
+					<p>Item No. AR033<br>Price: ₩920</p>
+					<button class="buy-button" onclick="updatePrice(920,'AR033.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="AR009" class="product-item">
+					<img src="images/AR009.jpg" alt="Item AR009">
+					<p>Item No. AR009<br>Price: ₩970</p>
+					<button class="buy-button" onclick="updatePrice(970,'AR009.jpg')">Buy Now</button>
+				</td>
+				<td id="AR022" class="product-item">
+					<img src="images/AR022.jpg" alt="Item AR022">
+					<p>Item No. AR022<br>Price: ₩1020</p>
+					<button class="buy-button" onclick="updatePrice(1020,'AR022.jpg')">Buy Now</button>
+				</td>
+				<td id="AR023" class="product-item">
+					<img src="images/AR023.jpg" alt="Item AR023">
+					<p>Item No. AR023<br>Price: ₩1070</p>
+					<button class="buy-button" onclick="updatePrice(1070,'AR023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="AR041" class="product-item">
+					<img src="images/AR041.jpg" alt="Item AR041">
+					<p>Item No. AR041<br>Price: ₩1120</p>
+					<button class="buy-button" onclick="updatePrice(1120,'AR041.jpg')">Buy Now</button>
+				</td>
+				<td id="AR042" class="product-item">
+					<img src="images/AR042.jpg" alt="Item AR042">
+					<p>Item No. AR042<br>Price: ₩1170</p>
+					<button class="buy-button" onclick="updatePrice(1170,'AR042.jpg')">Buy Now</button>
+				</td>
+				<td id="AR043" class="product-item">
+					<img src="images/AR043.jpg" alt="Item AR043">
+					<p>Item No. AR043<br>Price: ₩1220</p>
+					<button class="buy-button" onclick="updatePrice(1220,'AR043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="BattleRifle">
+			<tr>
+				<td id="BR020" class="product-item">
+					<img src="images/BR020.jpg" alt="Item BR020">
+					<p>Item No. BR020<br>Price: ₩810</p>
+					<button class="buy-button" onclick="updatePrice(810,'BR020.jpg')">Buy Now</button>
+				</td>
+				<td id="BR021" class="product-item">
+					<img src="images/BR021.jpg" alt="Item BR021">
+					<p>Item No. BR021<br>Price: ₩860</p>
+					<button class="buy-button" onclick="updatePrice(860,'BR021.jpg')">Buy Now</button>
+				</td>
+				<td id="BR033" class="product-item">
+					<img src="images/BR033.jpg" alt="Item BR033">
+					<p>Item No. BR033<br>Price: ₩910</p>
+					<button class="buy-button" onclick="updatePrice(910,'BR033.jpg')">Buy Now</button>
+						</td>
+					</tr>
+					<tr>
+				<td id="BR009" class="product-item">
+					<img src="images/BR009.jpg" alt="Item BR009">
+					<p>Item No. BR009<br>Price: ₩960</p>
+					<button class="buy-button" onclick="updatePrice(960,'BR009.jpg')">Buy Now</button>
+				</td>
+				<td id="BR022" class="product-item">
+					<img src="images/BR022.jpg" alt="Item BR022">
+					<p>Item No. BR022<br>Price: ₩1010</p>
+					<button class="buy-button" onclick="updatePrice(1010,'BR022.jpg')">Buy Now</button>
+				</td>
+				<td id="BR023" class="product-item">
+					<img src="images/BR023.jpg" alt="Item BR023">
+					<p>Item No. BR023<br>Price: ₩1060</p>
+					<button class="buy-button" onclick="updatePrice(1060,'BR023.jpg')">Buy Now</button>
+				</td>
+			</tr>
+			<tr>
+				<td id="BR041" class="product-item">
+					<img src="images/BR041.jpg" alt="Item BR041">
+					<p>Item No. BR041<br>Price: ₩1110</p>
+					<button class="buy-button" onclick="updatePrice(1110,'BR041.jpg')">Buy Now</button>
+				</td>
+				<td id="BR042" class="product-item">
+					<img src="images/BR042.jpg" alt="Item BR042">
+					<p>Item No. BR042<br>Price: ₩1160</p>
+					<button class="buy-button" onclick="updatePrice(1160,'BR042.jpg')">Buy Now</button>
+				</td>
+				<td id="BR043" class="product-item">
+					<img src="images/BR043.jpg" alt="Item BR043">
+					<p>Item No. BR043<br>Price: ₩1210</p>
+					<button class="buy-button" onclick="updatePrice(1210,'BR043.jpg')">Buy Now</button>
+				</td>
+			</tr>
+		</table>
+		<table class="product-table" id="Carbine">
+		<tr>
+			<td id="C020" class="product-item">
+				<img src="images/C020.jpg" alt="Item C020">
+				<p>Item No. C020<br>Price: ₩820</p>
+				<button class="buy-button" onclick="updatePrice(820,'C020.jpg')">Buy Now</button>
+			</td>
+			<td id="C021" class="product-item">
+				<img src="images/C021.jpg" alt="Item C021">
+				<p>Item No. C021<br>Price: ₩870</p>
+				<button class="buy-button" onclick="updatePrice(870,'C021.jpg')">Buy Now</button>
+			</td>
+			<td id="C033" class="product-item">
+				<img src="images/C033.jpg" alt="Item C033">
+				<p>Item No. C033<br>Price: ₩920</p>
+				<button class="buy-button" onclick="updatePrice(920,'C033.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="C009" class="product-item">
+				<img src="images/C009.jpg" alt="Item C009">
+				<p>Item No. C009<br>Price: ₩970</p>
+				<button class="buy-button" onclick="updatePrice(970,'C009.jpg')">Buy Now</button>
+			</td>
+			<td id="C022" class="product-item">
+				<img src="images/C022.jpg" alt="Item C022">
+				<p>Item No. C022<br>Price: ₩1020</p>
+				<button class="buy-button" onclick="updatePrice(1020,'C022.jpg')">Buy Now</button>
+			</td>
+			<td id="C023" class="product-item">
+				<img src="images/C023.jpg" alt="Item C023">
+				<p>Item No. C023<br>Price: ₩1070</p>
+				<button class="buy-button" onclick="updatePrice(1070,'C023.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="C041" class="product-item">	
+				<img src="images/C041.jpg" alt="Item C041">
+				<p>Item No. C041<br>Price: ₩1120</p>
+				<button class="buy-button" onclick="updatePrice(1120,'C041.jpg')">Buy Now</button>
+			</td>
+			<td id="C042" class="product-item">
+				<img src="images/C042.jpg" alt="Item C042">
+				<p>Item No. C042<br>Price: ₩1170</p>
+				<button class="buy-button" onclick="updatePrice(1170,'C042.jpg')">Buy Now</button>
+			</td>
+			<td id="C043" class="product-item">
+				<img src="images/C043.jpg" alt="Item C043">
+				<p>Item No. C043<br>Price: ₩1220</p>
+				<button class="buy-button" onclick="updatePrice(1220,'C043.jpg')">Buy Now</button>
+			</td>
+		</tr>
+	</table>
+		<table class="product-table" id="SniperRifle">
+		<tr>
+			<td id="SR020" class="product-item">
+				<img src="images/SR020.jpg" alt="Item SR020">
+				<p>Item No. SR020<br>Price: ₩830</p>
+				<button class="buy-button" onclick="updatePrice(830,'SR020.jpg')">Buy Now</button>
+			</td>
+			<td id="SR021" class="product-item">
+				<img src="images/SR021.jpg" alt="Item SR021">
+				<p>Item No. SR021<br>Price: ₩880</p>
+				<button class="buy-button" onclick="updatePrice(880,'SR021.jpg')">Buy Now</button>
+			</td>
+			<td id="SR033" class="product-item">
+				<img src="images/SR033.jpg" alt="Item SR033">
+				<p>Item No. SR033<br>Price: ₩930</p>
+				<button class="buy-button" onclick="updatePrice(930,'SR033.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="SR009" class="product-item">
+				<img src="images/SR009.jpg" alt="Item SR009">
+				<p>Item No. SR009<br>Price: ₩980</p>
+				<button class="buy-button" onclick="updatePrice(980,'SR009.jpg')">Buy Now</button>
+			</td>
+			<td id="SR022" class="product-item">
+				<img src="images/SR022.jpg" alt="Item SR022">
+				<p>Item No. SR022<br>Price: ₩1030</p>
+				<button class="buy-button" onclick="updatePrice(1030,'SR022.jpg')">Buy Now</button>
+			</td>
+			<td id="SR023" class="product-item">
+				<img src="images/SR023.jpg" alt="Item SR023">
+				<p>Item No. SR023<br>Price: ₩1080</p>
+				<button class="buy-button" onclick="updatePrice(1080,'SR023.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="SR041" class="product-item">
+				<img src="images/SR041.jpg" alt="Item SR041">
+				<p>Item No. SR041<br>Price: ₩1130</p>
+				<button class="buy-button" onclick="updatePrice(1130,'SR041.jpg')">Buy Now</button>
+			</td>
+			<td id="SR042" class="product-item">
+				<img src="images/SR042.jpg" alt="Item SR042">
+				<p>Item No. SR042<br>Price: ₩1180</p>
+				<button class="buy-button" onclick="updatePrice(1180,'SR042.jpg')">Buy Now</button>
+			</td>
+			<td id="SR043" class="product-item">
+				<img src="images/SR043.jpg" alt="Item SR043">
+				<p>Item No. SR043<br>Price: ₩1230</p>
+				<button class="buy-button" onclick="updatePrice(1230,'SR043.jpg')">Buy Now</button>
+			</td>
+		</tr>
+	</table>
+		<table class="product-table" id="CombatShotgun">
+    <tr>
+        <td id="CS020" class="product-item">
+            <img src="images/CS020.jpg" alt="Item CS020">
+            <p>Item No. CS020<br>Price: ₩850</p>
+            <button class="buy-button" onclick="updatePrice(850,'CS020.jpg')">Buy Now</button>
+        </td>
+        <td id="CS021" class="product-item">
+            <img src="images/CS021.jpg" alt="Item CS021">
+            <p>Item No. CS021<br>Price: ₩900</p>
+            <button class="buy-button" onclick="updatePrice(900,'CS021.jpg')">Buy Now</button>
+        </td>
+        <td id="CS033" class="product-item">
+            <img src="images/CS033.jpg" alt="Item CS033">
+            <p>Item No. CS033<br>Price: ₩950</p>
+            <button class="buy-button" onclick="updatePrice(950,'CS033.jpg')">Buy Now</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="CS009" class="product-item">
+            <img src="images/CS009.jpg" alt="Item CS009">
+            <p>Item No. CS009<br>Price: ₩1000</p>
+            <button class="buy-button" onclick="updatePrice(1000,'CS009.jpg')">Buy Now</button>
+        </td>
+        <td id="CS022" class="product-item">
+            <img src="images/CS022.jpg" alt="Item CS022">
+            <p>Item No. CS022<br>Price: ₩1050</p>
+            <button class="buy-button" onclick="updatePrice(1050,'CS022.jpg')">Buy Now</button>
+        </td>
+        <td id="CS023" class="product-item">
+            <img src="images/CS023.jpg" alt="Item CS023">
+            <p>Item No. CS023<br>Price: ₩1100</p>
+            <button class="buy-button" onclick="updatePrice(1100,'CS023.jpg')">Buy Now</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="CS041" class="product-item">
+            <img src="images/CS041.jpg" alt="Item CS041">
+            <p>Item No. CS041<br>Price: ₩1150</p>
+            <button class="buy-button" onclick="updatePrice(1150,'CS041.jpg')">Buy Now</button>
+        </td>
+        <td id="CS042" class="product-item">
+            <img src="images/CS042.jpg" alt="Item CS042">
+            <p>Item No. CS042<br>Price: ₩1200</p>
+            <button class="buy-button" onclick="updatePrice(1200,'CS042.jpg')">Buy Now</button>
+        </td>
+        <td id="CS043" class="product-item">
+            <img src="images/CS043.jpg" alt="Item CS043">
+            <p>Item No. CS043<br>Price: ₩1250</p>
+            <button class="buy-button" onclick="updatePrice(1250,'CS043.jpg')">Buy Now</button>
+        </td>
+    </tr>
+</table>
+		<table class="product-table" id="PumpShotgun">
+		<tr>
+			<td id="PAS020" class="product-item">
+				<img src="images/PAS020.jpg" alt="Item PAS020">
+				<p>Item No. PAS020<br>Price: ₩860</p>
+				<button class="buy-button" onclick="updatePrice(860,'PAS020.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS021" class="product-item">
+				<img src="images/PAS021.jpg" alt="Item PAS021">
+				<p>Item No. PAS021<br>Price: ₩910</p>
+				<button class="buy-button" onclick="updatePrice(910,'PAS021.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS033" class="product-item">
+				<img src="images/PAS033.jpg" alt="Item PAS033">
+				<p>Item No. PAS033<br>Price: ₩960</p>
+				<button class="buy-button" onclick="updatePrice(960,'PAS033.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="PAS009" class="product-item">
+				<img src="images/PAS009.jpg" alt="Item PAS009">
+				<p>Item No. PAS009<br>Price: ₩1010</p>
+				<button class="buy-button" onclick="updatePrice(1010,'PAS009.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS022" class="product-item">
+				<img src="images/PAS022.jpg" alt="Item PAS022">
+				<p>Item No. PAS022<br>Price: ₩1060</p>
+				<button class="buy-button" onclick="updatePrice(1060,'PAS022.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS023" class="product-item">
+				<img src="images/PAS023.jpg" alt="Item PAS023">
+				<p>Item No. PAS023<br>Price: ₩1110</p>
+				<button class="buy-button" onclick="updatePrice(1110,'PAS023.jpg')">Buy Now</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="PAS041" class="product-item">
+				<img src="images/PAS041.jpg" alt="Item PAS041">
+				<p>Item No. PAS041<br>Price: ₩1160</p>
+				<button class="buy-button" onclick="updatePrice(1160,'PAS041.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS042" class="product-item">
+				<img src="images/PAS042.jpg" alt="Item PAS042">
+				<p>Item No. PAS042<br>Price: ₩1210</p>
+				<button class="buy-button" onclick="updatePrice(1210,'PAS042.jpg')">Buy Now</button>
+			</td>
+			<td id="PAS043" class="product-item">
+				<img src="images/PAS043.jpg" alt="Item PAS043">
+				<p>Item No. PAS043<br>Price: ₩1260</p>
+				<button class="buy-button" onclick="updatePrice(1260,'PAS043.jpg')">Buy Now</button>
+			</td>
+		</tr>
+	</table>
+
+
+		</div>
+
+        </div>
+    </main>
+</body>
+</html>
+	

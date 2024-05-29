@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Training</title>
+    <link rel="stylesheet" href="training.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="training.js" defer></script>
+</head>
+<body>
+
+    <div id="weaponContainer">
+        <div id="weaponSelection">
+            <div class="weapon" id="pistol"></div>
+            <div class="weapon" id="sniper"></div>
+            <div class="weapon" id="throwingaxe"></div>
+            <div class="weapon" id="grenade"></div>
+        </div>
+    </div>
+
+
+    <div id="bulletDisplay">
+        <div class="bullet"></div> x <span id="bulletCount">0</span>
+    </div>
+	<div id="statusBar">
+    <span id="statusMessage"></span>
+</div>
+	<body onkeydown="keyd(event)">
+  <div id="pos">
+    <div id="chlid">
+      <div id="aim1"></div>
+      <div id="aim2"></div>
+    </div>
+  </div>
+  <div id="target">
+
+</div>
+</body>
+</html>

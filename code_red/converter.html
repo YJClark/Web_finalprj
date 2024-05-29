@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin to ₩ Coin Converter</title>
+    <link rel="stylesheet" href="converter.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bitcoin to ₩ Coin Converter</h1>
+    </header>
+    <main class="container">
+        <div class="left">
+            <div class="converter">
+                <div class="input">
+                    <label for="bitcoinAmount">Bitcoin Amount:</label>
+                    <input type="number" id="bitcoinAmount" class="short-input" placeholder="Enter Bitcoin amount" min="0" step="any">
+                </div>
+                <div class="output">
+                    <label for="wCoinAmount">₩ Coin Amount:</label>
+                    <output id="wCoinAmount">0</output>
+                </div>
+                <button onclick="convert()">Convert</button>
+                <button class="move-to-exchange" onclick="Exchange()">Exchange</button>
+                <div class="user-info">
+                    <h3>User: Miracul</h3>
+                    <h3>Bitcoin Owned: <span id="bitcoin">4.4</span></h3>
+                    <h3>Cash: ₩<span id="user-cash">1000</span></h3>
+                </div>
+            </div>
+
+            <div class="chart">
+                <canvas id="chart" width="800" height="400"></canvas> <!-- 更大的图表 -->
+            </div>
+            <div class="back-icon">
+                <a href="code_red.html" id="converter-link">
+                    <img src="return.png" alt="Back to Main Page" width="100px" class="info" data-tooltip="返回主頁面">
+                </a>
+            </div>
+        </div>
+        <div class="right">
+            <h2>交易紀錄</h2>
+            <ul class="transaction-history" id="transaction-history">
+                <!-- 交易記錄會動態添加在這裡 -->
+            </ul>
+			 <button id="clear-history-button">清空交易紀錄</button>
+        </div>
+    </main>
+    <script src="converter.js"></script> 
+</body>
+</html>

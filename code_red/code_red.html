@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物中心</title>
+    <link rel="stylesheet" href="code_red.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="code_red.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>MURTHERHELP</h1>
+        <table id="code">
+            <tr>
+                <td id="codeRed" data-tooltip="你的身分:殺手">Red&nbsp&nbsp&nbsp</td>
+                <td id="codePurple">Purple</td>
+                <td id="codeYellow">Yellow</td>
+            </tr>
+        </table>
+        <nav>
+            <a href="Guns.html" onclick="changeColor(this)" target="page" data-tooltip="購買槍枝"><span class="icon1"></span>Guns</a> | 
+            <a href="weapons.html" onclick="changeColor(this)" target="page" data-tooltip="購買匕首、暗殺工具"><span class="icon2"></span>Weapons</a> | 
+            <a href="bombs.html" onclick="changeColor(this)" target="page" data-tooltip="購買炸彈、引爆器材"><span class="icon3"></span>Bombs</a> | 
+            <a href="drugs.html" onclick="changeColor(this)" target="page" data-tooltip="購買各類毒藥"><span class="icon4"></span>Drugs</a>
+        </nav>
+    </header>
+    <main>
+		 <div id="top-left">
+            <div class="icon-tooltip" data-tooltip="將bitcoin轉換為₩幣">
+				<a href="converter.html" id="converter-link">
+                <img src="exchange.png" alt="exchange">
+				</a>
+            </div>
+            <div class="icon-tooltip" data-tooltip="訓練以提升任務成功率">
+			<a href="training.html">
+                <img src="training.png" alt="training">
+				</a>
+            </div>
+        </div>
+        <div>
+            <iframe id="iframe" name="page" width="1000" height="1000"></iframe>
+        </div>
+        <div class="user-info">
+            <h3>User: Miracul </h3>
+            <h3>Cash: ₩<span id="user-cash">100000</span></h3>
+			<h3>Bitcoin: <span id="bitcoin">5</span></h3>
+            <div class="inventory" >
+               <b> <span >Inventory ▼</span></b>
+                <div class="inventory-content" id="inventory-content"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
