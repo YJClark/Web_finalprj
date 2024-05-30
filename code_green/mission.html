@@ -17,34 +17,68 @@
     <main class="container">
         <div class="left">
             <nav>
-                <label for="switch"><img src="./Media/burger-menu.png"></label><!--漢堡按鈕圖示-->
+                <label for="switch"><img src="./Media/burger-menu.png" alt="burger-menu"></label><!--漢堡按鈕圖示-->
                 <input type="checkbox" id="switch"><!--選單開關-->
                 <ul class="menu"><!--選單內容-->
                     <li><a href="#" class="nav-link" data-target="assign">Assign</a></li>
                     <li><a href="#" class="nav-link" data-target="history">History</a></li>
                 </ul>
-            <nav>
+            </nav>
             <div id="assign" class="content active">
-                <h2>Assign Page</h2>
-                <p>Content for Assign page goes here.</p>
+                <h3>Assign</h3>
+                <div>
+                    <table class="KSCtable">
+                        <tr>
+                            <td>
+                                <button class="KSC"  data-role="killer">
+                                    <a href="#"><span style="color: red;">Killer</span></a> 
+                                </button>
+                            </td>
+                            <td>
+                                <button class="KSC" data-role="spy">
+                                    <a href="#"><span style="color: violet;">Spy</span></a> 
+                                </button>
+                            </td>
+                            <td>
+                                <button class="KSC" data-role="cleaner">
+                                    <a href="#"><span style="color: #FF9912;">Cleaner</span></a> 
+                                </button>
+                            </td>
+                        </tr>   
+                    </table>   
+                </div>
+                <div id="mission_container">
+                    <div id="character-listdiv">
+                        <span>Candidates</span>
+                        <!-- Characters will be displayed here -->
+                        <ul id="ChLi"></ul>
+                    </div>
+                    <div id="missionDetaildiv">
+                        <div id="detail">
+                            <ul> 
+                                <li id="ability"> Ability:&nbsp;<span></span></li>
+                                <li> Level: <span></span></li>
+                                <li> Reward: <span></span></li>
+                                <li> Estimate Time: <span></span></li>
+                                <li> Recommand Tools: <span></span></li>
+                                <li> Successful Rate: <span></span></li>
+                            </ul>
+                        </div>
+                        <div id="description">
+                            description
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="history" class="content">
-                <h2>History Page</h2>
-                <p>Content for History page goes here.</p>
+                <h3>History</h3>
             </div>    
-
-
         </div>
 
         <div class="right">
-
+            <h2>Right Side Content</h2>
+            <p>這邊要顯示目前任務進度</p>
         </div>
-
-
-
-
-
-
 
 
 
