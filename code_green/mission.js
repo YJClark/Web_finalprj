@@ -8,13 +8,12 @@ $(document).ready(function() {
         $('#switch').prop('checked', false); //點擊後收起
     });
 });
-
 //設計assign頁面
 $(document).ready(function() {
     characters = {
-        killer : [['Ms. R', 4 ], ['Mr. H', 1], ['Mr. L' , 5], ['Ms. L' , 3], ['Mr. B' , 2], ['Mr. C' , 5], ['Mr. L' , 5]],  //code red
-        spy : [['Mr. P', 5], ['Ms. K', 2], ['Ms. E', 3], ['Mr. M' , 4], ['Mr. N' , 4], ['Ms. P' , 1], ['Mr. L' , 5]],       //code purple
-        cleaner : [['Mr. Y', 1], ['Ms. G', 2], ['Mr. A', 4], ['Ms. D' , 4], ['Ms. I' , 3], ['Mr. S' , 1], ['Mr. L' , 5]]    //code yellow
+        killer: [['Ms. R', 4], ['Mr. H', 1], ['Mr. L', 5], ['Ms. L', 3], ['Mr. B', 2], ['Mr. C', 5], ['Mr. L', 5]],  // code red
+        spy: [['Mr. P', 5], ['Ms. K', 2], ['Ms. E', 3], ['Mr. M', 4], ['Mr. N', 4], ['Ms. P', 1], ['Mr. L', 5]],       // code purple
+        cleaner: [['Mr. Y', 1], ['Ms. G', 2], ['Mr. A', 4], ['Ms. D', 4], ['Ms. I', 3], ['Mr. S', 1], ['Mr. L', 5]]    // code yellow
     };
     $('.KSC').click(function(event) {
         event.preventDefault();
@@ -31,18 +30,21 @@ function renderCharacterList(role) {
         spy: 'purple',
         cleaner: '#FF9912'
     };
-    
-    $('#ChLi').empty(); // 清空 list
-    
+
+    $('#ChLi').empty();     //清空 list
+
     characterList.forEach(character => {
-        let newListItem = $('<li class="list">').text(character[0]);        
+        let newListItem = $('<li class="character">').text(character[0]);
         newListItem.css({
             'font': 'bold 20px Andale Mono, monospace',
             'text-align': 'center',
             'color': colors[role],
             'margin-bottom': '20px'
         });
-        
+
+        newListItem.data("ability", character[1]);
+        $("#ability span").text("");
+
         newListItem.hover(function() {
             $(this).css({
                 'background-color': colors[role],
@@ -60,6 +62,7 @@ function renderCharacterList(role) {
                 });
             }
         });
+
         //點一下選取
         newListItem.click(function() {
             if (selectedCharacter) {
@@ -77,8 +80,11 @@ function renderCharacterList(role) {
                 'transform': 'scale(1.5)',
                 'font-weight': 'bold'
             });
+            //選取時加入ability
+            $("#ability span").text($(this).data("ability"));
         });
-        //點兩下取消
+
+        // 點兩下取消
         newListItem.dblclick(function() {
             $(this).css({
                 'background-color': 'transparent',
@@ -87,20 +93,13 @@ function renderCharacterList(role) {
                 'font-weight': 'bold'
             });
             selectedCharacter = null;
+            //取消選取時把text刪掉
+            $("#ability span").text("");
         });
+
         $('#ChLi').append(newListItem);
     });
 }
-
-//Detail資料抓取及生成
-$('.KSC').on('click', function(event) {
-    event.preventDefault();
-    let role = $(this).data('role');
-    let index = $(this).index();
-    console.log(role);
-    let ability = characters[role][index][1];
-    $('#ability span').text(ability);
-});
 
 
 
