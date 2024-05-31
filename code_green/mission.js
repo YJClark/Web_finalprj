@@ -80,8 +80,9 @@ function renderCharacterList(role) {
                 'transform': 'scale(1.5)',
                 'font-weight': 'bold'
             });
-            //選取時加入ability
-            $("#ability span").text($(this).data("ability"));
+            //選取時加入ability，然後觸發change
+            //$("#ability span").text($(this).data("ability"));
+            $("#ability span").text($(this).data("ability")).trigger("custom");
         });
 
         // 點兩下取消
@@ -93,21 +94,123 @@ function renderCharacterList(role) {
                 'font-weight': 'bold'
             });
             selectedCharacter = null;
-            //取消選取時把text刪掉
-            $("#ability span").text("");
+            //取消選取時把text刪掉，然後觸發change
+            //$("#ability span").text(""); 
+            $("#ability span").text("").trigger("custom");
         });
 
         $('#ChLi').append(newListItem);
     });
 }
 
+//計算成功率(還沒加上推薦武器)
+$(document).ready(function(){
+    $("#ability span, #levelspan, #estspan input").on("change custom", function() {
+        // 都為string，轉換為 int
+        let ability = parseInt($("#ability span").text());
+        let level = parseInt($("input[name='rating']:checked").val());
+        let time = parseInt($("#estspan input").val());
+        console.log(ability, level, time);
+        
+        if (ability && level && time) {
+            let rate = Math.min( (Math.pow(ability, 2) * level) / (Math.sqrt(level * time) + 100), 1);
+            console.log(rate);
+            recommandtools();
+            $("#ratespan").text((rate.toFixed(2) * 100) + "%"); // 保留兩位小數
+        }
+    });
 
+    // 在改變 #ability span 內容時觸發自定義事件 custom (span、div不會觸發change所以要自己寫)
+    $("#ability span").on("change", function() {
+        $(this).trigger("custom");
+    });
+});
+
+//武器推薦(random)
+var guns = {
+    "Revolver": [
+        { id:"R009", imgSrc: "R009.jpg" },
+        { id:"R020", imgSrc: "R020.jpg" },
+        { id:"R021", imgSrc: "R021.jpg" },
+        { id:"R022", imgSrc: "R022.jpg" },
+        { id:"R023", imgSrc: "R023.jpg" },
+        { id:"R033", imgSrc: "R033.jpg" },
+        { id:"R041", imgSrc: "R041.jpg" },
+        { id:"R042", imgSrc: "R042.jpg" },
+        { id:"R043", imgSrc: "R043.jpg" }
+    ]
+}
+var  axes = {
+    "ThrowingAxe": [
+        { id: "TA001", imgSrc: "TA001.jpg" },
+        { id: "TA002", imgSrc: "TA002.jpg" },
+        { id: "TA003", imgSrc: "TA003.jpg" },
+        { id: "TA004", imgSrc: "TA004.jpg" },
+        { id: "TA005", imgSrc: "TA005.jpg" },
+        { id: "TA006", imgSrc: "TA006.jpg" },
+        { id: "TA007", imgSrc: "TA007.jpg" },
+        { id: "TA008", imgSrc: "TA008.jpg" },
+        { id: "TA009", imgSrc: "TA009.jpg" }
+    ]
+}
+var sniper = {
+    "SniperRifle": [
+        { id:"SR009", imgSrc: "SR009.jpg" },
+        { id:"SR020", imgSrc: "SR020.jpg" },
+        { id:"SR021", imgSrc: "SR021.jpg" },
+        { id:"SR022", imgSrc: "SR022.jpg" },
+        { id:"SR023", imgSrc: "SR023.jpg" },
+        { id:"SR033", imgSrc: "SR033.jpg" },
+        { id:"SR041", imgSrc: "SR041.jpg" },
+        { id:"SR042", imgSrc: "SR042.jpg" },
+        { id:"SR043", imgSrc: "SR043.jpg" }
+    ]
+}
+var recommendedTools = {}; 
+function recommandtools() {
+    var revolverIndex = Math.floor(Math.random() * guns.Revolver.length);
+    var selectedRevolver = guns.Revolver[revolverIndex];
+
+    var throwingAxeIndex = Math.floor(Math.random() * axes.ThrowingAxe.length);
+    var selectedThrowingAxe = axes.ThrowingAxe[throwingAxeIndex];
+
+    var sniperRifleIndex = Math.floor(Math.random() * sniper.SniperRifle.length);
+    var selectedSniperRifle = sniper.SniperRifle[sniperRifleIndex];
+
+    recommendedTools = {
+        "Revolver": selectedRevolver,
+        "ThrowingAxe": selectedThrowingAxe,
+        "SniperRifle": selectedSniperRifle
+    };
+    var toolspan = document.getElementById("toolspan");
+    toolspan.innerHTML = Object.keys(recommendedTools).map(function(key) {
+        var tool = recommendedTools[key];
+        return '<span class="tool" tool="' + key + '">ID: ' + tool.id + '<img src="../code_red/images/' + tool.imgSrc + '" style="display:none"/></span>';
+    }).join(", ");
+    
+    var spans = toolspan.querySelectorAll('.tool');
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].addEventListener('click', function() {
+            var img = this.querySelector('img');
+            if (img.style.display === 'none' || img.style.display === '') {
+                img.style.display = 'inline';
+                img.style.width = '55px';
+                img.style.height = '55px';
+            } else {
+                img.style.display = 'none';
+                img.style.width = '0px';
+                img.style.height = '0px';
+            }
+        });
+    }
+    
+}
 
 //內建幾個history顯示在left
 //codeium生成的，還沒改
 $(document).ready(function(){
     let history = [
-        {role: 'killer', level: 3, reward: 100, time: 10, tool: 'handgun', rate: 'Success'},
+        {role: 'killer', level: 3, reward: 100, time: 10 , tool: 'handgun', rate: 'Success'},
         {role: 'spy', level: 2, reward: 50, time: 8, tool: 'sniperRifle', rate: 'Fail'},
         {role: 'cleaner', level: 4, reward: 150, time: 12, tool: 'shotgun', rate: 'Fail'}
     ];
