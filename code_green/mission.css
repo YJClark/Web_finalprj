@@ -333,30 +333,30 @@ input:checked ~ .menu {
 }
 
 .reward {
- line-height: 28px;
- border: 2px solid transparent;
- border-bottom-color: #777;
- padding: .2rem 0;
- outline: none;
- background-color: transparent;
- color: #0d0c22;
- transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .reward:focus, .reward:hover {
- outline: none;
- padding: .1rem 0.5rem;
- border-radius: 1rem;
- border-color: #7a9cc6;
+    outline: none;
+    padding: .1rem 0.5rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
 }
 
 .reward::placeholder {
- color: #777;
+    color: #777;
 }
 
 .reward:focus::placeholder {
- opacity: 0;
- transition: opacity .3s; 
+    opacity: 0;
+    transition: opacity .3s; 
 }
 
 .missionInput{
@@ -374,21 +374,21 @@ input:checked ~ .menu {
 }
 
 .missionInput:focus, .missionInput:hover {
- outline: none;
- padding: .2rem 1rem;
- border-radius: 1rem;
- border-color: #873ac2;
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #873ac2;
 }
 
 .missionInput::placeholder {
- color: #777;
- font: bold 15px Andale Mono, monospace;
- text-align: center;
+    color: #777;
+    font: bold 15px Andale Mono, monospace;
+    text-align: center;
 }
 
 .missionInput:focus::placeholder {
- opacity: 0;
- transition: opacity .3s;
+    opacity: 0;
+    transition: opacity .3s;
 }
 
 #ratespan{ font: bold 15px Andale Mono, monospace; }
