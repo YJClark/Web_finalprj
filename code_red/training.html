@@ -9,32 +9,117 @@
     <script src="training.js" defer></script>
 </head>
 <body>
+	<h1 id="title">訓練室Training</h1>
+	<div id="bg"></div>
 
+    <div class="display">
+	<div id="wind">風速:</div><br>
+	<div id="windDisplay"></div>
+	</div>
+	<div id="gameHUD">
+    <div id="stats">
+        <div>射擊次數: <span id="shotCount">0</span></div>
+		<div>命中次數: <span id="Count">0</span></div>
+        <div>命中率: <span id="hitCount">0</span></div>
+        <div>手槍熟練度: <span id="pistolProficiency">0</span></div>
+    </div>
+	</div>
+	<div id="gameSniper">
+    <div id="stats">
+        <div>射擊次數: <span id="SshotCount">0</span></div>
+		<div>命中次數: <span id="SCount">0</span></div>
+        <div>命中率: <span id="ShitCount">0</span></div>
+        <div>狙擊槍熟練度: <span id="sniperProficiency">0</span></div>
+    </div>
+	</div>
+	<div id="gameAxe">
+    <div id="stats">
+        <div>投擲次數: <span id="ThrowCount">0</span></div>
+		<div>得分: <span id="Score">0</span></div>
+        <div>武器熟練度: <span id="axeProficiency">0</span></div>
+    </div>
+	</div>
     <div id="weaponContainer">
         <div id="weaponSelection">
-            <div class="weapon" id="pistol"></div>
-            <div class="weapon" id="sniper"></div>
-            <div class="weapon" id="throwingaxe"></div>
-            <div class="weapon" id="grenade"></div>
+            <div class="weapon" id="pistol">手槍</div>
+            <div class="weapon" id="sniper">狙擊槍</div>
+            <div class="weapon" id="throwingaxe">飛斧</div>
         </div>
     </div>
-
-
     <div id="bulletDisplay">
-        <div class="bullet"></div> x <span id="bulletCount">0</span>
+        <div class="bullet"></div> x <span id="bulletCount">10</span>
+    </div>
+	<div id="SbulletDisplay">
+        <div class="Sbullet"></div> x <span id="SbulletCount">4</span>
     </div>
 	<div id="statusBar">
     <span id="statusMessage"></span>
 </div>
-	<body onkeydown="keyd(event)">
-  <div id="pos">
-    <div id="chlid">
-      <div id="aim1"></div>
-      <div id="aim2"></div>
-    </div>
+	 <div id="zoom" class="zoom-container">
+        <div id="crosshair"></div>
+		<div id="zoom-level"></div>
   </div>
   <div id="target">
 
 </div>
+  <img id="starget" src="target.png" >
+<div id="gameInfoContainer">
+<div id="gameInfo">
+  <h3> 得分說明：</h3>
+  <ul>
+    <li>紅色區域：100分</li>
+    <li>白色區域：50分</li>
+    <li>藍色區域：30分</li>
+    <li>黃色區域：20分</li>
+    <li>黑色區域：10分</li>
+  </ul>
+</div>
+</div>
+ <div class="AxeTarget">
+
+<div class="center"></div>
+<div class="ring1"></div>
+<div class="ring2"></div>
+<div class="ring3"></div>
+<div class="ring4"></div>
+
+  <div class="aiming-point"></div>
+</div>
+<div class="sliders">
+  <div class="slider-container">
+    <label class="slider-label" for="slider1"></label>
+    <input type="range" id="slider1" class="accent" min="0" max="100" value="50" >
+  </div>
+  <div class="slider-container">
+    <label class="slider-label" for="slider2"></label>
+    <input type="range" id="slider2" class="accent" min="0" max="100" value="50" width="500px">
+  </div>
+</div>
+ <div id="keyHintsContainer">
+	<div id="Hints" class="key-hints">
+        <div><span class="key">1</span> 手槍</div>
+        <div><span class="key">2</span> 狙擊槍</div>
+		<div><span class="key">3</span> 飛斧</div>
+		<div><span class="key">Space</span> 返回頁面</div>
+    </div>
+    <div id="pistolHints" class="key-hints">
+        <div><span class="key">R</span> 重新裝填</div>
+        <div><span class="mouse-key">左鍵</span> 開火</div>
+		<div><span class="key">Space</span> 返回頁面</div>
+    </div>
+    <div id="sniperHints" class="key-hints">
+        <div><span class="key">R</span> 重新裝填</div>
+        <div><span class="key">F</span> 開火</div>
+        <div><span class="mouse-key">右鍵</span> 瞄準</div>
+        <div><span class="mouse-key">左鍵</span> 開火</div>
+		<div><span class="key">Space</span> 返回頁面</div>
+    </div>
+    <div id="axeHints" class="key-hints">
+        <div><span class="key">Q</span> 瞄準X軸</div>
+		<div><span class="key">E</span> 瞄準Y軸</div>
+		<div><span class="key">Space</span> 返回頁面</div>
+    </div>
+</div>
+
 </body>
 </html>

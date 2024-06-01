@@ -37,19 +37,45 @@
                 <img src="training.png" alt="training">
 				</a>
             </div>
+			   <div class="icon-tooltip" data-tooltip="執行任務來獲取bitcoin">
+				<a href="../code_green/mission.html" id="mission-link">
+					<img src="mission.png" alt="mission">
+				</a>
+			</div>
+			 <div id="display-info">
+				<h3>任務：</h3>
+				<p id="reward-info">Reward:</p>
+				<p id="level-info">Level:</p>
+				<p id="time-info">Time:</p>
+				<p id="tool-info">Tools:</p>
+				<p id="success-rate">Success Rate:</p>
+				<p id="required-skill">Required Skill:</p>
+				<button id="use-poison-button">使用毒藥</button>
+				<button id="use-bomb-button">使用炸彈</button>
+				<button id="execute-button">執行</button>
+			</div>
         </div>
         <div>
             <iframe id="iframe" name="page" width="1000" height="1000"></iframe>
         </div>
         <div class="user-info">
+			<div id="life-count" style="float: left; margin-right: 20px;">
+				<h3>Life: <span id="life-icons"></span></h3>
+			</div>
             <h3>User: Miracul </h3>
-            <h3>Cash: ₩<span id="user-cash">100000</span></h3>
+            <h3>Cash: ₩<span id="user-cash">5000</span></h3>
 			<h3>Bitcoin: <span id="bitcoin">5</span></h3>
             <div class="inventory" >
                <b> <span >Inventory ▼</span></b>
                 <div class="inventory-content" id="inventory-content"></div>
             </div>
         </div>
+		<div id="overlay">
+			<video id="video-player" width="640" height="360" controls autoplay muted>
+				<source src="" type="video/mp4">
+			</video>
+		</div>
+
     </main>
 </body>
 </html>

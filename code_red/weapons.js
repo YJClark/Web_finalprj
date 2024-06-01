@@ -219,5 +219,7 @@ function createProductTable(knifeType, knifeItems) {
     });
 });
  function updatePrice(price, itemImage) {
-            window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage}, '*');
+			var type;
+			type = 'weapon';
+            window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage, itemType: type}, '*');
         }

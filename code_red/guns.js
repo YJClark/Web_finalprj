@@ -56,6 +56,12 @@
         });
     });
 });
- function updatePrice(price, itemImage) {
-            window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage}, '*');
-        }
+function updatePrice(price, itemImage) {
+    var type;
+    if (itemImage.startsWith('S')) {
+        type = 'sniper';
+    } else {
+        type = 'gun';
+    }
+    window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage, itemType: type}, '*');
+}

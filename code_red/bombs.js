@@ -194,5 +194,7 @@ function createProductTable(bombType, bombItems) {
 });
 
 function updatePrice(price, itemImage) {
-            window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage}, '*');
+            var type;
+			type = 'bomb';
+            window.parent.postMessage({ type: 'priceUpdate', price: price ,itemImage: itemImage, itemType: type}, '*');
         }

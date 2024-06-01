@@ -1,5 +1,5 @@
 var chart, chartData;
-
+document.addEventListener('DOMContentLoaded', loadTransactionRecords);
 function convert() {
     var bitcoinAmount = parseFloat(document.getElementById("bitcoinAmount").value);
     var latestBitcoinPrice = chartData.datasets[0].data[chartData.datasets[0].data.length - 1];
@@ -136,7 +136,7 @@ function loadTransactionRecords() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', loadTransactionRecords);
+
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -152,7 +152,27 @@ if (urlParams.has('bitcoin')) {
 } else {
     console.log('User bitcoin parameter not found in URL');
 }
-
+if (urlParams.has('gunHitCount')) {
+	if( (parseInt(urlParams.get('gunHitCount'))) > 0 )
+	{		
+    const gunHitCount = parseInt(urlParams.get('gunHitCount'));
+    addTransactionRecord("Transaction", "Gun bullets: " + gunHitCount+" -₩"+gunHitCount*10);
+	}
+}
+if (urlParams.has('ThrowCount')) {
+	if( (parseInt(urlParams.get('ThrowCount'))) > 0 )
+	{		
+    const gunHitCount = parseInt(urlParams.get('ThrowCount'));
+    addTransactionRecord("Transaction", "Throwing: " + ThrowCount+" -₩"+ThrowCount*100);
+	}
+}
+if (urlParams.has('SShotCount')) {
+	if( (parseInt(urlParams.get('SShotCount'))) > 0 )
+	{		
+    const gunHitCount = parseInt(urlParams.get('SShotCount'));
+    addTransactionRecord("Transaction", "Sniper bullets: " + SShotCount+" -₩"+SShotCount*50);
+	}
+}
 document.getElementById('converter-link').addEventListener('click', function(event) {
     event.preventDefault();
     var cash = document.getElementById('user-cash').textContent;
@@ -172,7 +192,7 @@ if (urlParams.has('imageNameArray')) {
 }
 
 function recordWeaponTransaction(imageNameArray) {
-	 var imageNameArrayAsArray = imageNameArray.split(',');
+	var imageNameArrayAsArray = imageNameArray.split(',');
     var transactionItem = createTransactionItem('Weapon Trade', 'Weapons: ' + imageNameArrayAsArray.join(', '));
     var transactionHistory = document.getElementById("transaction-history");
     if (!transactionHistory) {
