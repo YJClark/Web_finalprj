@@ -424,3 +424,6 @@ function updateLifeIcons(lifeCount) {
     }
 }
  
+$('#sendbtn').click(() => {
+    $('#chat-container').slideToggle();
+});

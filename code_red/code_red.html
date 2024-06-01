@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物中心</title>
     <link rel="stylesheet" href="code_red.css">
+    <link rel="stylesheet" href="../code_green/chatbox.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="code_red.js" defer></script>
+    <script src="../code_green/mission.js" defer></script>
+    <script src="../code_green/chatbox.js" defer></script>
 </head>
 <body>
     <header>
@@ -37,11 +40,23 @@
                 <img src="training.png" alt="training">
 				</a>
             </div>
-			   <div class="icon-tooltip" data-tooltip="執行任務來獲取bitcoin">
+			<div class="icon-tooltip" data-tooltip="執行任務來獲取bitcoin">
 				<a href="../code_green/mission.html" id="mission-link">
 					<img src="mission.png" alt="mission">
 				</a>
 			</div>
+            <div class="icon-tooltip" data-tooltip="跟Code-Green對話">
+				<button id ="sendbtn"><img src="send.png" alt="send"></button>
+			</div>
+            <div id="chat-container">
+                <div id="chat-window">
+                    <div id="output"></div>
+                </div>
+                <input id="message" type="text" placeholder="Message" />
+                <button id="send">Send</button>
+            </div>
+            <script> const user = 'sender';  // 標記這個檔案是發送者 </script>
+
 			 <div id="display-info">
 				<h3>任務：</h3>
 				<p id="reward-info">Reward:</p>

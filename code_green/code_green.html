@@ -5,48 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager</title>
     <link rel="stylesheet" href="code_green.css">
+    <link rel="stylesheet" href="chatbox.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="code_green.js" defer></script>
+    <script src="chatbox.js" defer></script>
 </head>
 <body>
     <div id="banner">
         <div id="managerdiv">
             <img src="Media/manager.png" alt="manager-icon">
         </div>   
-
-        <div id="managerTextdiv">
-            <p id>Code Green</p>
-        </div>
     </div>
 
+    <div id="managerTextdiv">
+        <p id>Code Green</p>
+    </div>
     <main>
         <div id="missiondiv">
             <p>Mission Assignment</p>
             <a target="mission" href="prograss.html" id="prograss"></a>
         </div>
 
-        <div>
+        <div id="mission">
             <iframe id="mission_iframe" name="mission"></iframe>
         </div>
 
-
-
-
-
-
-    
-        <div id="maydaydiv">
-            <p>MAYDAY</p>
+        <div id="chat-container">
+            <div id="chat-window">
+                <div id="output"></div>
+            </div>
+            <input id="message" type="text" placeholder="Message" />
+            <button id="send">Send</button>
         </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    </main>
+        <script>
+            const user = 'receiver';  // 標記這個檔案是接收者
+        </script>
+
+        <div class="maydaydiv">
+            <div>
+                <button class="maydaybtn">
+                    <span class="back"></span>
+                    <span class="front"></span>
+                </button>
+            </div>
+            <div class="loader">
+                <span></span>
+            </div>
+            <div class="arrivedlog">
+                <p></p>
+            </div>
+        </div>
+    <main>
 </body>
 </html>

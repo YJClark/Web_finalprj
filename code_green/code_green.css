@@ -1,11 +1,21 @@
+::-webkit-scrollbar { width: 0px; }
+
 body {
+    background-image: url("Media/hacker.png");
     user-select: none;
-    background-color: black;
+    background-color: rgb(31, 30, 30);
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     height: 100vh;
- 
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 20vh);
+    border: 2px solid green;
 }
 
 #managerdiv{
@@ -42,23 +52,23 @@ body {
     text-shadow: 2px 2px 2px rgba(197, 243, 151, 0.5);
 }
 
-#missiondiv{
-    position: relative;
-    top: 20%;
-    left: 10%;
-
-    /*
+main{
     opacity: 0;
     transition: opacity 1s;
     animation: fadeIn 1s forwards;
     animation-delay: 3s;
-    */
 }
 
 #missiondiv{
     position: relative;
-    top: 150px;
-    left: 50px;
+    top: 20%;
+    left: 5%;
+}
+
+#missiondiv{
+    position: absolute;
+    top: 100px;
+    left: 80px;
     display: flex; 
     justify-content: space-around;
   }
@@ -69,14 +79,200 @@ body {
 }
 
 #mission_iframe{
-    position: relative;
-    top:150px;
-    left: 50px;
+    position: absolute;
+    top: 175px;
+    left: 20px;
     display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 500px;
+    width: 25%;
+    height: 400px;
     /*border:none; */
     overflow: hidden;
-    background-color: blanchedalmond;
-  }
+    border-radius: 5px;
+}
+
+/*聊天室位置*/
+#chat-container {
+    position: absolute;
+    top: 175px;
+    left: 450px; 
+    justify-content: space-around;  
+}
+
+/*調整緊急鈕跟雷達位置*/
+.maydaydiv {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
+
+.arrivedlog{
+    margin-top: 5px;
+    height: auto;
+    width: 100%;
+}
+
+.arrivedlog p{
+    font: 15px bold Andale Mono, monospace;
+    color: #4bd522;
+    text-align: center;
+}
+
+/*緊急鈕*/
+.maydaybtn {
+    float: right;
+    --primary: 255, 90, 120;
+    --secondary: 150, 50, 60;
+    width: 30px;
+    height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 2px solid rgb(var(--primary), .5);
+    border-radius: 100%;
+    position: relative;
+    transition: .3s;
+}
+  
+.maydaybtn .back {
+    background: rgb(var(--secondary));
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.maydaybtn .front {
+    background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+    box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+    border-radius: 100%;
+    position: absolute;
+    border: 1px solid rgb(var(--secondary));
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    transform: translateY(-15%);
+    transition: .15s;
+    color: rgb(var(--secondary));
+}
+  
+.maydaybtn:active .front {
+    transform: translateY(0%);
+    box-shadow: 0 0;
+}
+
+/*雷達*/
+.loader {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 25px 75px rgba(0,0,0,0.55);
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+  
+.loader::before {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    background: transparent;
+    border: 1px dashed#444;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 5px seagreen, inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+  
+.loader::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1.5px solid seagreen;
+    box-shadow: inset 0px 0px 3px seagreen, inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+  
+.loader span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    transform-origin: top left;
+    animation: radar81 3s linear infinite;
+    border-top: 1.5px dashed #fff;
+}
+  
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: rgb(25, 214, 107);
+    transform-origin: top left;
+    transform: rotate(-55deg);
+    filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+}
+  
+@keyframes radar81 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*點點造型*/
+.dot {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    border-radius: 9999px;
+    animation: fly 60s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+      top: var(--dot-start-top);
+      left: var(--dot-start-left);
+    }
+    100% {
+      top: var(--dot-end-top);
+      left: var(--dot-end-left);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+      box-shadow: inset 0 0 10px 2px var(--dot-color),
+                  0 0 15px 2px var(--dot-color);
+    }
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+      box-shadow: inset 0 0 10px 2px var(--dot-color),
+                  0 0 5px 2px var(--dot-color);
+    }
+}
+
+@keyframes moveToCenter {
+        0% {
+          top: var(--dot-start-top);
+          left: var(--dot-start-left);
+        }
+        100% {
+          top: 50%;
+          left: 50%;
+        }
+}
+      
+.moving { animation: moveToCenter 5s forwards; }

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="mission.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="mission.js" defer></script>
-    <script src="../loginPage/account.js" defer></script>
     <title>Mission</title>
 </head>
 <body>
@@ -60,9 +59,9 @@
                     <div id="missionDetaildiv">
                         <div id="detail">
                             <ul> 
-                                <li id="ability"> Ability:&ensp;<span></span></li>
+                                <li > Ability:&ensp;<span><input id='ability'class='missionInput' type="number" min="0" placeholder="skill" required autocomplete="off" step="10"></span></li>
                                 <li> <span id="levelspan">Level:&ensp; 
-                                        <span class="rating">
+                                        <span  class="rating">
                                             <input value="5" name="rating" id="star5" type="radio">
                                             <label for="star5"></label>
                                             <input value="4" name="rating" id="star4" type="radio">
@@ -78,17 +77,27 @@
                                 </li>
                                 <li> 
                                     <span id="rewardspan">Reward:&ensp; 
-                                        <input class='missionInput' type="number" min="0" placeholder="Bitcoin" required autocomplete="off">
+                                        <input id='reward'class='missionInput' type="number" min="0" placeholder="Bitcoin" required autocomplete="off">
                                     </span>
                                 </li>
                                 <li> Estimate Time:&ensp;
                                     <span id="estspan">
-                                        <input class='missionInput' type="number" min="0" placeholder="Hour" required autocomplete="off">
+                                        <input id='time'class='missionInput' type="number" min="0" placeholder="Hour" required autocomplete="off">
                                     </span>
                                 </li>
-                                <li> Recommand Tools:&ensp; <span id="toolspan"></span></li>
-                                <li> Successful Rate:&ensp; <span id="ratespan"></span></li>
-                            </ul>
+								
+                                 <li> Recommand Tools:&ensp; 
+									<span id="toolspan">
+										<select id="weapon-select">
+											<option value="none">None</option>
+											<option value="sniper">sniper</option>
+											<option value="gun">gun</option>
+											<option value="weapon">weapon</option>
+										</select>
+									</span>
+								</li>
+								</ul>
+							<button id="send-button">Send</button>
                         </div>
                         <div id="description">
                             <textarea class="missionInput" cols="30" rows="10" placeholder="Mission Description"></textarea>

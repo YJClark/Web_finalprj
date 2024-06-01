@@ -65,12 +65,16 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-	
 }
 
 #display-info p:last-child {
     border-bottom: none;
 }
+
+#chat-container {
+    display: none; /* Initially hidden */
+}
+
 .icon-tooltip::after {
     content: attr(data-tooltip);
     position: absolute;

@@ -244,5 +244,21 @@ $(document).ready(function(){
     });
 });
 
-//內建幾個任務顯示在right
-
+//傳任務給codered
+$(document).ready(function() {
+    $('#send-button').click(function(event) {
+        event.preventDefault();
+		let reward = document.getElementById('reward').value;
+		let time = document.getElementById('time').value;
+		let level = parseInt($("input[name='rating']:checked").val());
+		let recommandtools =document.getElementById('weapon-select').value;
+		let requireskill =document.getElementById('ability').value;
+        localStorage.setItem('reward', reward);
+        localStorage.setItem('level', level);
+        localStorage.setItem('time', time);
+		localStorage.setItem('recommandtools', recommandtools);
+		localStorage.setItem('requireskill', requireskill);
+		console.log(reward,level,time,recommandtools,requireskill);
+        console.log('Variables sent successfully');
+    });
+});
