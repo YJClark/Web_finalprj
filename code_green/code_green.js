@@ -60,3 +60,8 @@ $(document).ready(function() {
       });
   });
 
+$(document).ready(function(){
+    $(".addbtn").click(function(){
+        location.href='mission.html';
+    });
+});

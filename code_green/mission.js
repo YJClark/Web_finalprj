@@ -203,20 +203,23 @@ function recommandtools() {
             }
         });
     }
-    
 }
 
 //內建幾個history顯示在left
 //codeium生成的，還沒改
 $(document).ready(function(){
     let history = [
-        {role: 'killer', level: 3, reward: 100, time: 10 , tool: 'handgun', rate: 'Success'},
-        {role: 'spy', level: 2, reward: 50, time: 8, tool: 'sniperRifle', rate: 'Fail'},
-        {role: 'cleaner', level: 4, reward: 150, time: 12, tool: 'shotgun', rate: 'Fail'}
+        {role: 'killer', level: 3, reward: 100, time: 10 , tool: 'Handgun', status: 'Success'},
+        {role: 'Spy', level: 2, reward: 50, time: 8, tool: 'SniperRifle', status: 'Fail'},
+        {role: 'Cleaner', level: 5, reward: 150, time: 9, tool: 'Shotgun', status: 'Success'},
+        {role: 'Cleaner', level: 3, reward: 150, time: 6, tool: 'Pesticide', status: 'Fail'},
+        {role: 'Killer', level: 5, reward: 100, time: 18, tool: 'shotgun', status: 'Missing'},
+        {role: 'Spy', level: 1, reward: 20, time: 1, tool: 'KCN', status: 'Sacrifice'},
+        {role: 'Killer', level: 5, reward: 2000, time: 1000, tool: 'Machine gun', status: 'Triumph '},
     ];
     history.forEach(m => {
         let newListItem = $('<li class="list">').append(
-            $('<span>').text(`${m.role} - Level: ${m.level} - Reward: ${m.reward} - Estimate Time: ${m.time} - Recommand Tools: ${m.tool} -  ${m.rate}`),
+            $('<span>').text(`${m.role} - Level: ${m.level} - Reward: ${m.reward} - Estimate Time: ${m.time} - Recommand Tools: ${m.tool} -  ${m.status}`),
         );
         newListItem.css({
             'font': 'bold 20px Andale Mono, monospace',
@@ -260,5 +263,41 @@ $(document).ready(function() {
 		localStorage.setItem('requireskill', requireskill);
 		console.log(reward,level,time,recommandtools,requireskill);
         console.log('Variables sent successfully');
+    });
+});
+
+//生成progress bar用
+document.addEventListener("DOMContentLoaded", function() {
+    const selectedRoles = {};
+
+    document.querySelectorAll(".KSC").forEach(button => {
+        button.addEventListener("click", function() {
+            const role = this.getAttribute("data-role");
+            const color = this.getAttribute("data-color");
+
+            if (selectedRoles[role]) {
+                delete selectedRoles[role];
+                this.classList.remove("btn-selected");
+            } else {
+                selectedRoles[role] = color;
+                this.classList.add("btn-selected");
+            }
+        });
+    });
+
+    document.getElementById("send-button").addEventListener("click", function() {
+        if (Object.keys(selectedRoles).length > 0) {
+            localStorage.setItem("selectedRoles", JSON.stringify(selectedRoles));
+
+            // Clear selections after sending
+            Object.keys(selectedRoles).forEach(role => {
+                document.querySelector(`.KSC[data-role="${role}"]`).classList.remove("btn-selected");
+            });
+
+            // Clear selectedRoles object
+            for (let key in selectedRoles) {
+                delete selectedRoles[key];
+            }
+        }
     });
 });

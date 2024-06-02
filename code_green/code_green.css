@@ -51,7 +51,7 @@ body {
     color: #4bd522;
     text-shadow: 2px 2px 2px rgba(197, 243, 151, 0.5);
 }
-
+  
 main{
     opacity: 0;
     transition: opacity 1s;
@@ -78,16 +78,62 @@ main{
     color: #4bd522;
 }
 
-#mission_iframe{
+#mission{
     position: absolute;
     top: 175px;
     left: 20px;
     display: block;
     width: 25%;
-    height: 400px;
+    height: 100%;
     /*border:none; */
     overflow: hidden;
     border-radius: 5px;
+}
+
+#mission_iframe{
+    width: 100%;
+    height: 60%;
+}
+
+/*加mission的button*/
+.addbtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 12px;
+    gap: 4px;
+    height: 32px;
+    width: 81px;
+    border: none;
+    background: #1b1b1cd0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+  
+.lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #DE8A2A;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+  
+.addbtn:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+    background: #1b1b1cea;
+}
+.addbtn:hover .svg-icon { animation: rotate 1.3s linear infinite; }
+  
+ @keyframes rotate {
+    0% { transform: rotate(0deg); } 
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); } 
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
 }
 
 /*聊天室位置*/
