@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spy Network</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .spy-network {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .spy {
+            position: absolute;
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+        }
+        .spy.show {
+            display: flex; /* Show when the 'show' class is added */
+        }
+        .spy:hover {
+            border-color: #ff0000;
+        }
+        .spy-info {
+            position: absolute;
+            top: 0;
+            left: 120%;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .spy:hover .spy-info {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Spy Network</h1>
+        <div class="spy-network" id="spy-network">
+        </div>
+    </div>
+
+    <script>
+        let selectedSpy = null;
+        
+        function selectSpy(spy) {
+            if (!selectedSpy) {
+                selectedSpy = spy;
+            } else {
+                drawRelation(selectedSpy, spy);
+                selectedSpy = null;
+            }
+        }
+
+        function addSpy(name, location, lastSeen, top, left, id) {
+            const spyNetwork = document.querySelector('.spy-network');
+            const newSpy = document.createElement('div');
+            newSpy.classList.add('spy');
+            newSpy.style.top = top + 'px';
+            newSpy.style.left = left + 'px';
+            newSpy.setAttribute('data-id', id);
+            newSpy.onclick = function() { selectSpy(this); };
+            newSpy.innerHTML = `
+                <div class="spy-info">
+                    <h3>${name}</h3>
+                    <p>Location: ${location}</p>
+                    <p>Last Seen: ${lastSeen}</p>
+                </div>
+            `;
+            spyNetwork.appendChild(newSpy);
+        }
+
+        function showSpy(id) {
+            const spy = document.querySelector(`.spy[data-id="${id}"]`);
+            if (spy) {
+                spy.classList.add('show');
+                saveVisibleSpy(id);
+            }
+        }
+
+        function saveVisibleSpy(id) {
+            const visibleSpies = JSON.parse(localStorage.getItem('visibleSpies')) || [];
+            if (!visibleSpies.includes(id)) {
+                visibleSpies.push(id);
+                localStorage.setItem('visibleSpies', JSON.stringify(visibleSpies));
+            }
+        }
+
+        function loadVisibleSpies() {
+            const visibleSpies = JSON.parse(localStorage.getItem('visibleSpies')) || [];
+            visibleSpies.forEach(id => showSpy(id));
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const spies = [
+                { name: 'John Doe', location: 'New York City', lastSeen: '2024-05-30', id: 'john-doe' },
+                { name: 'Jane Smith', location: 'London', lastSeen: '2024-06-01', id: 'jane-smith' },
+                { name: 'Michael Johnson', location: 'Chicago', lastSeen: '2024-05-28', id: 'michael-johnson' },
+                { name: 'David Lee', location: 'San Francisco', lastSeen: '2024-05-29', id: 'david-lee' },
+                { name: 'Sarah Taylor', location: 'Seattle', lastSeen: '2024-06-01', id: 'sarah-taylor' },
+                { name: 'Christopher Clark', location: 'Boston', lastSeen: '2024-05-27', id: 'christopher-clark' },
+                { name: 'Ashley Martinez', location: 'Houston', lastSeen: '2024-05-30', id: 'ashley-martinez' },
+                { name: 'Daniel Rodriguez', location: 'Dallas', lastSeen: '2024-05-29', id: 'daniel-rodriguez' },
+                { name: 'Amanda White', location: 'Atlanta', lastSeen: '2024-06-02', id: 'amanda-white' },
+                { name: 'Matthew Harris', location: 'Philadelphia', lastSeen: '2024-05-28', id: 'matthew-harris' },
+            ];
+
+            spies.forEach(spy => {
+                const randomTop = Math.floor(Math.random() * 500);
+                const randomLeft = Math.floor(Math.random() * 500);
+                addSpy(spy.name, spy.location, spy.lastSeen, randomTop, randomLeft, spy.id);
+            });
+
+            loadVisibleSpies();
+        });
+		document.addEventListener('DOMContentLoaded', function() {
+
+
+			const urlParams = new URLSearchParams(window.location.search);
+			const targetId = urlParams.get('targetId');
+			const targetName = urlParams.get('targetName');
+			const targetLocation = urlParams.get('targetLocation');
+			const lastSeen = urlParams.get('lastSeen');
+ 
+            showSpy(targetId);
+
+        });
+    </script>
+</body>
+</html>

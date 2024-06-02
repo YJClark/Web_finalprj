@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物中心</title>
+    <link rel="stylesheet" href="code_yellow.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="code_yellow.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>MURTHERHELP</h1>
+        <table id="code">
+            <tr>
+                <td id="codeRed">Red&nbsp&nbsp&nbsp</td>
+                <td id="codePurple" >Purple</td>
+                <td id="codeYellow" data-tooltip="你的身分:清潔人員">Yellow</td>
+            </tr>
+        </table>
+        <nav>
+            <a href="tool.html" onclick="changeColor(this)" target="page" data-tooltip="清潔工具"><span class="icon icon1"></span>Tool</a> | 
+            <a href="place.html" onclick="changeColor(this)" target="page" data-tooltip="指定地點"><span class="icon icon2"></span>Place</a> | 
+            
+        </nav>
+    </header>
+    <main>
+        <div id="top-left">
+            <div class="icon-tooltip" data-tooltip="訓練以提升清潔效率">
+                <a href="">
+                    <img src="training.png" alt="training">
+                </a>
+            </div>
+            <div class="icon-tooltip" data-tooltip="執行清潔任務來獲取報酬">
+                <a href="../code_green/mission.html" id="mission-link">
+                    <img src="mission.png" alt="mission">
+                </a>
+            </div>
+            <div id="display-info">
+                <h3>任務：</h3>
+                <p id="reward-info">報酬:</p>
+                <p id="level-info">級別:</p>
+                <p id="time-info">時間:</p>
+                <p id="tool-info">工具:</p>
+                <p id="success-rate">成功率:</p>
+                <p id="required-skill">所需技能:</p>
+                <button id="use-wise-button">使用智慧</button>
+                <button id="execute-button">執行</button>
+            </div>
+        </div>
+        <div>
+            <iframe id="iframe" name="page" width="1000" height="1000"></iframe>
+        </div>
+        <div class="user-info">
+            <h3>用戶: Cleaner M</h3>
+            <h3>名聲: <span id="intelligence">50</span></h3>
+            <div class="inventory">
+                <b><span>已處理 ▼</span></b>
+                <div class="inventory-content" id="inventory-content"></div>
+            </div>
+        </div>
+        <div id="random-number"></div>
+    </main>
+</body>
+</html>

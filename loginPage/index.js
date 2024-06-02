@@ -57,11 +57,11 @@ function login(checked){
             break;
         //間諜(紫色)
         case "p":
-            alert("login spy(purple)");
+            window.location.href = "../code_purple/code_purple.html"; //p 02Peko08
             break;
         //清理(黃色)
         case "y":
-            alert("login clearner(yellow)");
+            window.location.href = "../code_yellow/code_yellow.html"; //y 01Winter01
             break;
         //管理(綠色)
         case "g":
@@ -69,7 +69,7 @@ function login(checked){
             break;
         //一般人
         default:
-            alert("login farmer");
+            alert("Welcome Back Farmer");
             break;
     } 
 }
