@@ -92,8 +92,8 @@ $('#login-form').dialog({
     autoOpen: false,
     modal: false,
     resizable: false,
-    width: 275,
-    height: 210,
+    width: 350,
+    height: 300,
     position: { my: "left top", at: "right top+6%" },
     show: {
         effect: "fold",
